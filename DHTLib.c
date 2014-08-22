@@ -35,7 +35,7 @@ void dhtlib_init()
 	dhtlib_setin();
 }
 
-static enum enDHTStatus dhtlib_read()
+static enum dhtlib_status dhtlib_read()
 {
 	unsigned char i = 0;
 	unsigned char aindex = 0;
@@ -113,10 +113,10 @@ static enum enDHTStatus dhtlib_read()
 	return E_DHTLIB_OK;
 }
 
-enum enDHTStatus dhtlib_read11(uint8_t * temp, uint8_t * hum)
+enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
 {
 	// Read operation
-	enum enDHTStatus s = dhtlib_read();
+	enum dhtlib_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
@@ -130,9 +130,9 @@ enum enDHTStatus dhtlib_read11(uint8_t * temp, uint8_t * hum)
 	return E_DHTLIB_OK;
 }
 
-enum enDHTStatus dhtlib_read22(uint16_t * temp, uint16_t * hum)
+enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
 {
-	enum enDHTStatus s = dhtlib_read();
+	enum dhtlib_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
@@ -151,9 +151,9 @@ enum enDHTStatus dhtlib_read22(uint16_t * temp, uint16_t * hum)
 
 }
 
-enum enDHTStatus dhtlib_float22(float * temp, float * hum)
+enum dhtlib_status dhtlib_float22(float * temp, float * hum)
 {
-	enum enDHTStatus s = dhtlib_read();
+	enum dhtlib_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
 

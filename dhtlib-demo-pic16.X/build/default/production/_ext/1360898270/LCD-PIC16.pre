@@ -1,5 +1,95 @@
 
-# 1 "main.c"
+# 1 "../LCD/LCD-PIC16.c"
+
+# 13 "/Applications/microchip/xc8/v1.21/include/stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 # 44 "/Applications/microchip/xc8/v1.21/include/pic16f88.h"
 extern volatile unsigned char INDF @ 0x000;
@@ -1265,173 +1355,6 @@ extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsi
 #pragma intrinsic(_delay)
 extern void _delay(unsigned long);
 
-# 8 "/Applications/microchip/xc8/v1.21/include/stdio.h"
-typedef int ptrdiff_t;
-typedef unsigned size_t;
-typedef unsigned short wchar_t;
-
-# 7 "/Applications/microchip/xc8/v1.21/include/stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 23 "/Applications/microchip/xc8/v1.21/include/stdio.h"
-extern int errno;
-
-# 54
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 17 "/Applications/microchip/xc8/v1.21/include/conio.h"
-extern int errno;
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 31
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 99 "/Applications/microchip/xc8/v1.21/include/stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 191
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...);
-extern int sscanf(const char *, const char *, ...);
-extern int vprintf(const char *, va_list);
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap);
-extern int vsscanf(const char *, const char *, va_list);
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 13 "/Applications/microchip/xc8/v1.21/include/stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 51 "../Tick/Tick.h"
-void tick_init();
-
-# 63
-uint32_t tick_get();
-
-# 72
-void tick_update();
-
 # 70 "../LCD/LCD.h"
 enum enLcdCommands {
 E_CLEAR_DISPLAY = 0x01,
@@ -1526,119 +1449,78 @@ void lcd_iowrite4(uint8_t data);
 # 357
 void lcd_iowrite8(uint8_t data);
 
-# 13 "../DHTLibPort.h"
-typedef uint8_t PORTBASE;
-
-# 38 "../DHTLib.h"
-enum dhtlib_status {
-E_DHTLIB_OK = 0,
-E_DHTLIB_TIMEOUT_ERROR,
-E_DHTLIB_CHKSUM_ERROR,
-};
-
-# 53
-void dhtlib_init();
-
-# 67
-enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
-
-# 95
-enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
-
-# 123
-enum dhtlib_status dhtlib_float22(float * temp, float * hum);
+# 45 "../LCD/LCD-PIC16.c"
+uint8_t lcd_ioinit(void * iodata)
+{
+uint8_t i = 0;
 
 
-# 14 "main.c"
-#pragma config FOSC = INTOSCIO
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config BOREN = OFF
-#pragma config LVP = OFF
-#pragma config CPD = OFF
-#pragma config WRT = OFF
-#pragma config CCPMX = RB0
-#pragma config CP = OFF
+TRISBbits.TRISB0 = 0;
+TRISBbits.TRISB1 = 0;
+
+# 57
+TRISAbits.TRISA0 = 0;
+TRISAbits.TRISA1 = 0;
+TRISAbits.TRISA2 = 0;
+TRISAbits.TRISA3 = 0;
+
+# 72
+for (i = 0; i < 11; i++)
+lcd_ioset(i, 0);
 
 
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
 
+return 4;
 
-char buf[20];
+# 81
+}
 
+void lcd_ioset(enum enLCDControlPins pin, uint8_t out)
+{
+switch (pin) {
 
-void dht11_task();
-void led_task();
+# 100
+case E_D4_PIN:
+PORTAbits.RA0 = out;
+break;
+case E_D5_PIN:
+PORTAbits.RA1 = out;
+break;
+case E_D6_PIN:
+PORTAbits.RA2 = out;
+break;
+case E_D7_PIN:
+PORTAbits.RA3 = out;
+break;
+case E_RS_PIN:
+PORTBbits.RB1 = out;
+break;
+case E_EN_PIN:
+PORTBbits.RB0 = out;
+break;
+case E_RW_PIN:
 
-# 39
-void main()
+# 122
+break;
+}
+}
+
+void lcd_iowrite4(uint8_t data)
 {
 
-OSCCON = 0x7C;
-ANSEL = 0x00;
+uint8_t i;
 
+for (i = 4; i < 8; i++)
+lcd_ioset(i, (data & (1 << i - 4)) ? 1 : 0);
 
-lcd_init(0, 16, 2);
-tick_init();
-dhtlib_init();
+lcd_ioset(E_EN_PIN,1);
+_delay((unsigned long)((10)*(1000000/1000000.0)));
+lcd_ioset(E_EN_PIN,0);
 
-
-lcd_on();
-
-lcd_puts("  PRUEBA DHT11  ");
-
-
-
-for (;;) {
-led_task();
-dht11_task();
-}
 }
 
-# 66
-void dht11_task()
-{
-static unsigned long ltick = 0;
-
-uint8_t tb = 0, hb = 0;
-
-
-if (tick_get() - ltick >= ((unsigned long long)((2000000 + 128ull)/8ull)) * 5) {
-
-ltick = tick_get();
-
-lcd_goto(0, 1);
-
-enum dhtlib_status eResult = dhtlib_read11(&tb, &hb);
-if (eResult == E_DHTLIB_OK)
-sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
-else
-sprintf(buf, "Sensor error: %02d    ", eResult);
-
-lcd_puts(buf);
-}
-}
-
-# 93
-void led_task()
+void lcd_iowrite8(uint8_t data)
 {
 
-static unsigned long ltime = 0;
-
-if (tick_get() - ltime >= ((unsigned long long)((2000000 + 128ull)/8ull)) / 2) {
-ltime = tick_get();
-
-
-PORTA ^= 0x10;
-}
-}
-
-# 109
-void interrupt isr(void)
-{
-
-tick_update();
-
+# 152
 }

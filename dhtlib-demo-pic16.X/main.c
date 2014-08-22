@@ -1,6 +1,7 @@
 #include <xc.h>
 #include <stdio.h>
 
+#define CONFIG_TIMING_MAIN_CLOCK 2000000
 
 #include "../Tick/Tick.h"
 #include "../LCD/LCD.h"
@@ -75,7 +76,7 @@ void dht11_task()
 		// Colocar el cursor en la segunda linea
 		lcd_goto(0, 1);
 		// Dar formato e imprimir el texto
-		enum enDHTStatus eResult = dhtlib_read11(&tb, &hb);
+		enum dhtlib_status eResult = dhtlib_read11(&tb, &hb);
 		if (eResult == E_DHTLIB_OK)
 			sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
 		else

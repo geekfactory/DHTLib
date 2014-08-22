@@ -23,7 +23,7 @@
 /*		Includes and dependencies			*/
 /*-------------------------------------------------------------*/
 #include "Delay/Delay.h"
-//#include "DHTLibPort.h"
+#include "DHTLibPort.h"
 /*-------------------------------------------------------------*/
 /*		Macros and definitions				*/
 /*-------------------------------------------------------------*/
@@ -35,7 +35,7 @@
 /**
  * Defines the sensor API return codes
  */
-enum enDHTStatus {
+enum dhtlib_status {
 	E_DHTLIB_OK = 0, //!< Read operation on DHT11 succesfull
 	E_DHTLIB_TIMEOUT_ERROR, //!< Timeout error occured on DHT11 comunication
 	E_DHTLIB_CHKSUM_ERROR, //!< Checksum verification error
@@ -64,7 +64,7 @@ void dhtlib_init();
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum enDHTStatus dhtlib_read11(uint8_t * temp, uint8_t * hum);
+enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
 
 /**
  * @brief Alias for eDHTLibRead11()
@@ -92,7 +92,7 @@ enum enDHTStatus dhtlib_read11(uint8_t * temp, uint8_t * hum);
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum enDHTStatus dhtlib_read22(uint16_t * temp, uint16_t * hum);
+enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
 
 /**
  * @brief Alias for eDHTLibRead22()
@@ -120,7 +120,7 @@ enum enDHTStatus dhtlib_read22(uint16_t * temp, uint16_t * hum);
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum enDHTStatus dhtlib_float22(float * temp, float * hum);
+enum dhtlib_status dhtlib_float22(float * temp, float * hum);
 
 #endif
 // End of Header file

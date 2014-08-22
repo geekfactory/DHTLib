@@ -1,6 +1,8 @@
 #ifndef DHTLIBCONF_H
 #define	DHTLIBCONF_H
 
+#define CONFIG_TIMING_MAIN_CLOCK	2000000
+
 /**
  * Configure here the registers and pins associated with the DHT11 sensor
  */
