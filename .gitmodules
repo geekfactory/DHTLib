@@ -1,0 +1,9 @@
+[submodule "Delay"]
+	path = Delay
+	url = https://github.com/geekfactory/Delay
+[submodule "LCD"]
+	path = LCD
+	url = https://github.com/geekfactory/LCD
+[submodule "Tick"]
+	path = Tick
+	url = https://github.com/geekfactory/Tick
