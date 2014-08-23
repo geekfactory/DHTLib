@@ -46,39 +46,33 @@ static enum dhtlib_status dhtlib_read()
 	// be chosen according to the processor speed.
 	PORTBASE tocounter = 0;
 
-	// Clear all bits on data reception buffer
+	// Clear reception buffer
 	for (i = 0; i < 5; i++) bits[i] = 0;
 
 	// Disable interrupts to keep timing accurate
 	dhtlib_disint();
 
-	// Generate MCU start signal
+	// Generate DHT start signal
 	dhtlib_start();
 
 	// Wait for response from DHT11 max 80 uS low
 	tocounter = 1;
 	while (!dhtlib_testpin()) {
-		if (!tocounter++) { // Check for timeout
-			dhtlib_enaint(); // Re-enable interrupts and return
-			return E_DHTLIB_TIMEOUT_ERROR;
-		}
+		if (!tocounter++)
+			goto timeout;
 	}
 	// Wait for response from DHT11 max 80 uS high
 	tocounter = 1;
 	while (dhtlib_testpin()) {
-		if (!tocounter++) {
-			dhtlib_enaint();
-			return E_DHTLIB_TIMEOUT_ERROR;
-		}
+		if (!tocounter++)
+			goto timeout;
 	}
 	// Begin data reception, 40 bits to be received
 	for (i = 0; i < 40; i++) {
 		tocounter = 1;
 		while (!dhtlib_testpin()) {
-			if (!tocounter++) {
-				dhtlib_enaint();
-				return E_DHTLIB_TIMEOUT_ERROR;
-			}
+			if (!tocounter++)
+				goto timeout;
 		}
 		// If after 50 uS the pin is low we're on the start of another bit
 		delay_us(40);
@@ -94,10 +88,8 @@ static enum dhtlib_status dhtlib_read()
 		// If pin is high after 50 us we're receiving logic high
 		tocounter = 1;
 		while (dhtlib_testpin()) {
-			if (!tocounter++) {
-				dhtlib_enaint();
-				return E_DHTLIB_TIMEOUT_ERROR;
-			}
+			if (!tocounter++)
+				goto timeout;
 		}
 		// Set the bit and shift left
 		bits[aindex] |= (1 << bcount);
@@ -110,8 +102,11 @@ static enum dhtlib_status dhtlib_read()
 	}
 	// Enable interrupts again
 	dhtlib_enaint();
-
 	return E_DHTLIB_OK;
+	// Timeout while communicatig with DHT sensor
+	timeout:
+	dhtlib_enaint();
+	return E_DHTLIB_TIMEOUT_ERROR;
 }
 
 enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
@@ -133,6 +128,7 @@ enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
 
 enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
 {
+	// Read operation
 	enum dhtlib_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;

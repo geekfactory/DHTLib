@@ -1414,27 +1414,21 @@ dhtlib_start();
 
 tocounter = 1;
 while (!PORTBbits.RB2) {
-if (!tocounter++) {
-INTCONbits.GIE = 1;;
-return E_DHTLIB_TIMEOUT_ERROR;
-}
+if (!tocounter++)
+goto timeout;
 }
 
 tocounter = 1;
 while (PORTBbits.RB2) {
-if (!tocounter++) {
-INTCONbits.GIE = 1;;
-return E_DHTLIB_TIMEOUT_ERROR;
-}
+if (!tocounter++)
+goto timeout;
 }
 
 for (i = 0; i < 40; i++) {
 tocounter = 1;
 while (!PORTBbits.RB2) {
-if (!tocounter++) {
-INTCONbits.GIE = 1;;
-return E_DHTLIB_TIMEOUT_ERROR;
-}
+if (!tocounter++)
+goto timeout;
 }
 
 _delay((unsigned long)((40)*(2000000/1000000.0)));
@@ -1450,10 +1444,8 @@ continue;
 
 tocounter = 1;
 while (PORTBbits.RB2) {
-if (!tocounter++) {
-INTCONbits.GIE = 1;;
-return E_DHTLIB_TIMEOUT_ERROR;
-}
+if (!tocounter++)
+goto timeout;
 }
 
 bits[aindex] |= (1 << bcount);
@@ -1466,8 +1458,11 @@ bcount--;
 }
 
 INTCONbits.GIE = 1;;
-
 return E_DHTLIB_OK;
+
+timeout:
+INTCONbits.GIE = 1;;
+return E_DHTLIB_TIMEOUT_ERROR;
 }
 
 enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
@@ -1530,7 +1525,7 @@ if (bits[2] & 0x80) {
 return E_DHTLIB_OK;
 }
 
-# 183
+# 178
 static void dhtlib_start()
 {
 TRISBbits.TRISB2 = 0;
