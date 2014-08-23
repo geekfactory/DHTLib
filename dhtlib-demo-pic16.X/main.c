@@ -28,6 +28,7 @@
 
 // Buffer para trabajar sobre el texto que se envía a la pantalla LCD
 char buf[20];
+dht_t dht11;
 
 // Prototipos de las funciones definidas en este archivo
 void dht11_task(); // Actualiza la pantalla con la temperatura y humedad
@@ -43,9 +44,9 @@ void main()
 	ANSEL = 0x00; // Configuracion de canales analogicos en PIC16F88
 
 	// Preparamos las librerías para su uso
-	lcd_init(0, 16, 2); // Iniciar el controlador de pantalla
 	tick_init(); // Iniciar el contador / temporizador del sistema
-	dhtlib_init(); // Preparar la comunicación con el sensor DHT11
+	lcd_init(0, 16, 2); // Iniciar el controlador de pantalla
+	dht11 = dhtlib_init(10); // Preparar la comunicación con el sensor DHT11
 
 	// Encendemos la pantalla LCD
 	lcd_on();
@@ -76,7 +77,7 @@ void dht11_task()
 		// Colocar el cursor en la segunda linea
 		lcd_goto(0, 1);
 		// Dar formato e imprimir el texto
-		enum dhtlib_status eResult = dhtlib_read11(&tb, &hb);
+		enum dht_status eResult = dhtlib_read11( dht11, &tb, &hb);
 		if (eResult == E_DHTLIB_OK)
 			sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
 		else

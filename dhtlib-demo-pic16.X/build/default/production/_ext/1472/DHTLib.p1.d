@@ -3,6 +3,5 @@
  ../DHTLib.c  \
 ../Delay/Delay.h  \
 ../DHTLibPort.h  \
-../DHTLibConf.h  \
 ../DHTLib.h  \
 ../Delay/DelayPort.h 

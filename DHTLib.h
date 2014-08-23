@@ -23,10 +23,23 @@
 /*		Includes and dependencies			*/
 /*-------------------------------------------------------------*/
 #include "Delay/Delay.h"
+//#include "io/io.h"
 #include "DHTLibPort.h"
 /*-------------------------------------------------------------*/
 /*		Macros and definitions				*/
 /*-------------------------------------------------------------*/
+
+#define INPUT 1
+#define OUTPUT 0
+#define HIGH 1
+#define LOW 0
+
+void io_mode(uint8_t pin, uint8_t mode)
+{}
+uint8_t io_read(uint8_t pin)
+{ return 0;}
+void io_write(uint8_t pin, uint8_t mode)
+{}
 
 /*-------------------------------------------------------------*/
 /*		Typedefs enums & structs			*/
@@ -35,7 +48,7 @@
 /**
  * Defines the sensor API return codes
  */
-enum dhtlib_status {
+enum dht_status {
 	E_DHTLIB_OK = 0, //!< Read operation on DHT11 succesfull
 	E_DHTLIB_TIMEOUT_ERROR, //!< Timeout error occured on DHT11 comunication
 	E_DHTLIB_CHKSUM_ERROR, //!< Checksum verification error
@@ -50,7 +63,7 @@ enum dhtlib_status {
  * Prepares the communication with the DHT11 sensor, initializes IO ports and
  * any other required peripherals.
  */
-void dhtlib_init();
+dht_t dhtlib_init(uint8_t pin);
 
 /**
  * @brief Reads the current temperature and humidity from DHT11 sensor
@@ -64,21 +77,8 @@ void dhtlib_init();
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
+enum dht_status dhtlib_read11(dht_t sensor, uint8_t * temp, uint8_t * hum);
 
-/**
- * @brief Alias for eDHTLibRead11()
- *
- * Reads the current temperature and humidity, returns an enumerated value
- * defining if the comunication with the sensor was succesfull. This function
- * places the temperature and humidity readings on the provided buffers.
- *
- * @param pxTemperature Pointer to place the temperature reading
- * @param pxHumidity Pointer to place the humidity reading
- *
- * @return An enumerated value indictating the communication and device status
- */
-#define DHT11Read( _temp, _hum ) eDHTLibRead11( _temp, _hum )
 
 /**
  * @brief Reads the current temperature and humidity from DHT22 sensor
@@ -92,21 +92,8 @@ enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
+enum dht_status dhtlib_read22(dht_t sensor, uint16_t * temp, uint16_t * hum);
 
-/**
- * @brief Alias for eDHTLibRead22()
- *
- * Reads the current temperature and humidity, returns an enumerated value
- * defining if the comunication with the sensor was succesfull. This function
- * puts the temperature and humidity readings on the provided buffers.
- *
- * @param pxTemperature Pointer to place the temperature reading
- * @param pxHumidity Pointer to place the humidity reading
- *
- * @return An enumerated value indictating the communication and device status
- */
-#define DHT22Read( _temp, _hum ) eDHTLibRead22( _temp, _hum )
 
 /**
  * @brief Reads the current temperature and humidity from DHT22 sensor
@@ -120,7 +107,7 @@ enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
  *
  * @return An enumerated value indictating the communication and device status
  */
-enum dhtlib_status dhtlib_float22(float * temp, float * hum);
+enum dht_status dhtlib_float22(dht_t sensor, float * temp, float * hum);
 
 #endif
 // End of Header file

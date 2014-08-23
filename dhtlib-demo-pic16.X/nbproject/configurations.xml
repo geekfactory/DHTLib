@@ -5,8 +5,8 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>../DHTLib.h</itemPath>
-      <itemPath>../DHTLibConf.h</itemPath>
       <itemPath>../DHTLibPort.h</itemPath>
+      <itemPath>../LCD/LCD.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

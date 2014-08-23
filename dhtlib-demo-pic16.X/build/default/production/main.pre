@@ -1526,27 +1526,36 @@ void lcd_iowrite4(uint8_t data);
 # 357
 void lcd_iowrite8(uint8_t data);
 
-# 13 "../DHTLibPort.h"
+# 12 "../DHTLibPort.h"
 typedef uint8_t PORTBASE;
+typedef uint8_t dht_t;
 
-# 38 "../DHTLib.h"
-enum dhtlib_status {
+# 37 "../DHTLib.h"
+void io_mode(uint8_t pin, uint8_t mode)
+{}
+uint8_t io_read(uint8_t pin)
+{ return 0;}
+void io_write(uint8_t pin, uint8_t mode)
+{}
+
+# 51
+enum dht_status {
 E_DHTLIB_OK = 0,
 E_DHTLIB_TIMEOUT_ERROR,
 E_DHTLIB_CHKSUM_ERROR,
 };
 
-# 53
-void dhtlib_init();
+# 66
+dht_t dhtlib_init(uint8_t pin);
 
-# 67
-enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
+# 80
+enum dht_status dhtlib_read11(dht_t sensor, uint8_t * temp, uint8_t * hum);
 
 # 95
-enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
+enum dht_status dhtlib_read22(dht_t sensor, uint16_t * temp, uint16_t * hum);
 
-# 123
-enum dhtlib_status dhtlib_float22(float * temp, float * hum);
+# 110
+enum dht_status dhtlib_float22(dht_t sensor, float * temp, float * hum);
 
 
 # 14 "main.c"
@@ -1567,12 +1576,13 @@ enum dhtlib_status dhtlib_float22(float * temp, float * hum);
 
 
 char buf[20];
+dht_t dht11;
 
 
 void dht11_task();
 void led_task();
 
-# 39
+# 40
 void main()
 {
 
@@ -1580,9 +1590,9 @@ OSCCON = 0x7C;
 ANSEL = 0x00;
 
 
-lcd_init(0, 16, 2);
 tick_init();
-dhtlib_init();
+lcd_init(0, 16, 2);
+dht11 = dhtlib_init(10);
 
 
 lcd_on();
@@ -1597,7 +1607,7 @@ dht11_task();
 }
 }
 
-# 66
+# 67
 void dht11_task()
 {
 static unsigned long ltick = 0;
@@ -1611,7 +1621,7 @@ ltick = tick_get();
 
 lcd_goto(0, 1);
 
-enum dhtlib_status eResult = dhtlib_read11(&tb, &hb);
+enum dht_status eResult = dhtlib_read11( dht11, &tb, &hb);
 if (eResult == E_DHTLIB_OK)
 sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
 else
@@ -1621,7 +1631,7 @@ lcd_puts(buf);
 }
 }
 
-# 93
+# 94
 void led_task()
 {
 
@@ -1635,7 +1645,7 @@ PORTA ^= 0x10;
 }
 }
 
-# 109
+# 110
 void interrupt isr(void)
 {
 

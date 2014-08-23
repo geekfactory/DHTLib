@@ -18,25 +18,28 @@
 	Author e-mail: ruben at geekfactory dot mx
  */
 #include"DHTLib.h"
+#define CONFIG_TIMING_MAIN_CLOCK 2000000
 
 unsigned char bits[5];
 
 /*-------------------------------------------------------------*/
-/*		Function prototypes	(this file only)	*/
+/*		Function prototypes (this file only)	*/
 /*-------------------------------------------------------------*/
-static void dhtlib_start();
+static void dhtlib_start(uint8_t pin);
 
 /*-------------------------------------------------------------*/
 /*		API Functions Implementation			*/
 
 /*-------------------------------------------------------------*/
-void dhtlib_init()
+dht_t dhtlib_init(uint8_t pin)
 {
 	// Initialization just sets DHT11 pin as input
-	dhtlib_setin();
+	io_mode(pin, INPUT);
+
+	return pin;
 }
 
-static enum dhtlib_status dhtlib_read()
+static enum dht_status dhtlib_read(dht_t sensor)
 {
 	unsigned char i = 0;
 	unsigned char aindex = 0;
@@ -53,30 +56,30 @@ static enum dhtlib_status dhtlib_read()
 	dhtlib_disint();
 
 	// Generate DHT start signal
-	dhtlib_start();
+	dhtlib_start(sensor);
 
 	// Wait for response from DHT11 max 80 uS low
 	tocounter = 1;
-	while (!dhtlib_testpin()) {
+	while (!io_read(sensor)) {
 		if (!tocounter++)
 			goto timeout;
 	}
 	// Wait for response from DHT11 max 80 uS high
 	tocounter = 1;
-	while (dhtlib_testpin()) {
+	while (io_read(sensor)) {
 		if (!tocounter++)
 			goto timeout;
 	}
 	// Begin data reception, 40 bits to be received
 	for (i = 0; i < 40; i++) {
 		tocounter = 1;
-		while (!dhtlib_testpin()) {
+		while (!io_read(sensor)) {
 			if (!tocounter++)
 				goto timeout;
 		}
 		// If after 50 uS the pin is low we're on the start of another bit
 		delay_us(40);
-		if (!dhtlib_testpin()) {
+		if (!io_read(sensor)) {
 			if (bcount == 0) {
 				bcount = 7;
 				aindex++;
@@ -87,7 +90,7 @@ static enum dhtlib_status dhtlib_read()
 		}
 		// If pin is high after 50 us we're receiving logic high
 		tocounter = 1;
-		while (dhtlib_testpin()) {
+		while (io_read(sensor)) {
 			if (!tocounter++)
 				goto timeout;
 		}
@@ -104,15 +107,15 @@ static enum dhtlib_status dhtlib_read()
 	dhtlib_enaint();
 	return E_DHTLIB_OK;
 	// Timeout while communicatig with DHT sensor
-	timeout:
+timeout:
 	dhtlib_enaint();
 	return E_DHTLIB_TIMEOUT_ERROR;
 }
 
-enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
+enum dht_status dhtlib_read11(dht_t sensor, uint8_t * temp, uint8_t * hum)
 {
 	// Read operation
-	enum dhtlib_status s = dhtlib_read();
+	enum dht_status s = dhtlib_read(sensor);
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
@@ -126,10 +129,10 @@ enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
 	return E_DHTLIB_OK;
 }
 
-enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
+enum dht_status dhtlib_read22(dht_t sensor, uint16_t * temp, uint16_t * hum)
 {
 	// Read operation
-	enum dhtlib_status s = dhtlib_read();
+	enum dht_status s = dhtlib_read(sensor);
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
@@ -148,9 +151,9 @@ enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
 
 }
 
-enum dhtlib_status dhtlib_float22(float * temp, float * hum)
+enum dht_status dhtlib_float22(dht_t sensor, float * temp, float * hum)
 {
-	enum dhtlib_status s = dhtlib_read();
+	enum dht_status s = dhtlib_read(sensor);
 	if (s != E_DHTLIB_OK)
 		return s;
 
@@ -176,15 +179,12 @@ enum dhtlib_status dhtlib_float22(float * temp, float * hum)
  * This function generates the signal needed to start the comunication with the
  * tamperature and humidity sensor.
  */
-static void dhtlib_start()
+static void dhtlib_start(uint8_t pin)
 {
-	dhtlib_setout(); // Set pin as output
-	dhtlib_outlow(); // Pull bus to low state
-
+	io_mode(pin, OUTPUT); // Set pin as output
+	io_write(pin, LOW); // Pull bus to low state
 	delay_ms(20);
-
-	dhtlib_outhi();
-	dhtlib_setin(); // Turn pin to input
-
+	io_write(pin, HIGH);
+	io_mode(pin, INPUT);
 	delay_us(60);
 }
