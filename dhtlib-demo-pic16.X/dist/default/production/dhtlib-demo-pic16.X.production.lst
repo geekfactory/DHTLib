@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.21 build 54009 
-                                                                                               Fri Aug 22 01:27:07 2014
+                                                                                               Fri Aug 22 11:05:12 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 54009
      1                           	processor	16F88
@@ -2282,7 +2282,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2275  05EB                     __ptext7:	
   2276 ;; *************** function _dhtlib_read11 *****************
   2277 ;; Defined at:
-  2278 ;;		line 117 in file "../DHTLib.c"
+  2278 ;;		line 118 in file "../DHTLib.c"
   2279 ;; Parameters:    Size  Location     Type
   2280 ;;  temp            1    wreg     PTR unsigned char 
   2281 ;;		 -> dht11_task@tb(1), 
@@ -2327,7 +2327,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2320  05EC  1303               	bcf	3,6	;RP1=0, select bank0
   2321  05ED  00D2               	movwf	dhtlib_read11@temp
   2322                           
-  2323                           ;DHTLib.c: 119: enum dhtlib_status s = dhtlib_read();
+  2323                           ;DHTLib.c: 120: enum dhtlib_status s = dhtlib_read();
   2324  05EE  118A  2383  118A   	fcall	_dhtlib_read
   2325  05F1  1283               	bcf	3,5	;RP0=0, select bank0
   2326  05F2  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2335,17 +2335,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2328  05F4  084F               	movf	??_dhtlib_read11,w
   2329  05F5  00D4               	movwf	dhtlib_read11@s
   2330                           
-  2331                           ;DHTLib.c: 120: if (s != E_DHTLIB_OK)
+  2331                           ;DHTLib.c: 121: if (s != E_DHTLIB_OK)
   2332  05F6  0854               	movf	dhtlib_read11@s,w
   2333  05F7  1903               	btfsc	3,2
   2334  05F8  2DFB               	goto	l2461
   2335                           
-  2336                           ;DHTLib.c: 121: return s;
+  2336                           ;DHTLib.c: 122: return s;
   2337  05F9  0854               	movf	dhtlib_read11@s,w
   2338  05FA  0008               	return
   2339  05FB                     l2461:	
   2340                           
-  2341                           ;DHTLib.c: 123: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
+  2341                           ;DHTLib.c: 124: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
   2342  05FB  0828               	movf	_bits+2,w
   2343  05FC  0727               	addwf	_bits+1,w
   2344  05FD  00CF               	movwf	??_dhtlib_read11
@@ -2358,18 +2358,18 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2351  0604  0851               	movf	??_dhtlib_read11+2,w
   2352  0605  00D3               	movwf	dhtlib_read11@chksum
   2353                           
-  2354                           ;DHTLib.c: 124: if (chksum != bits[4])
+  2354                           ;DHTLib.c: 125: if (chksum != bits[4])
   2355  0606  082A               	movf	_bits+4,w
   2356  0607  0653               	xorwf	dhtlib_read11@chksum,w
   2357  0608  1903               	skipnz
   2358  0609  2E0C               	goto	l2469
   2359                           
-  2360                           ;DHTLib.c: 125: return E_DHTLIB_CHKSUM_ERROR;
+  2360                           ;DHTLib.c: 126: return E_DHTLIB_CHKSUM_ERROR;
   2361  060A  3002               	movlw	2
   2362  060B  0008               	return
   2363  060C                     l2469:	
   2364                           
-  2365                           ;DHTLib.c: 127: * hum = bits[0];
+  2365                           ;DHTLib.c: 128: * hum = bits[0];
   2366  060C  0826               	movf	_bits,w
   2367  060D  00CF               	movwf	??_dhtlib_read11
   2368  060E  084E               	movf	dhtlib_read11@hum,w
@@ -2378,7 +2378,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2371  0611  1383               	bcf	3,7	;select IRP bank0
   2372  0612  0080               	movwf	0
   2373                           
-  2374                           ;DHTLib.c: 128: * temp = bits[2];
+  2374                           ;DHTLib.c: 129: * temp = bits[2];
   2375  0613  0828               	movf	_bits+2,w
   2376  0614  00CF               	movwf	??_dhtlib_read11
   2377  0615  0852               	movf	dhtlib_read11@temp,w
@@ -2386,7 +2386,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2379  0617  084F               	movf	??_dhtlib_read11,w
   2380  0618  0080               	movwf	0
   2381                           
-  2382                           ;DHTLib.c: 130: return E_DHTLIB_OK;
+  2382                           ;DHTLib.c: 131: return E_DHTLIB_OK;
   2383  0619  3000               	movlw	0
   2384  061A  0008               	return
   2385  061B                     __end_of_dhtlib_read11:	
@@ -2395,7 +2395,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2388  0383                     __ptext8:	
   2389 ;; *************** function _dhtlib_read *****************
   2390 ;; Defined at:
-  2391 ;;		line 39 in file "../DHTLib.c"
+  2391 ;;		line 40 in file "../DHTLib.c"
   2392 ;; Parameters:    Size  Location     Type
   2393 ;;		None
   2394 ;; Auto vars:     Size  Location     Type
@@ -2432,7 +2432,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2425                           ;psect for function _dhtlib_read
   2426  0383                     _dhtlib_read:	
   2427                           
-  2428                           ;DHTLib.c: 40: unsigned char i = 0;
+  2428                           ;DHTLib.c: 41: unsigned char i = 0;
   2429                           
   2430                           ;incstack = 0
   2431                           ; Regs used in _dhtlib_read: [wreg-fsr0h+status,2+status,0+pclath+cstack]
@@ -2440,19 +2440,19 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2433  0384  1303               	bcf	3,6	;RP1=0, select bank0
   2434  0385  01CD               	clrf	dhtlib_read@i
   2435                           
-  2436                           ;DHTLib.c: 41: unsigned char aindex = 0;
+  2436                           ;DHTLib.c: 42: unsigned char aindex = 0;
   2437  0386  01CA               	clrf	dhtlib_read@aindex
   2438                           
-  2439                           ;DHTLib.c: 42: unsigned char bcount = 7;
+  2439                           ;DHTLib.c: 43: unsigned char bcount = 7;
   2440  0387  3007               	movlw	7
   2441  0388  00C8               	movwf	??_dhtlib_read
   2442  0389  0848               	movf	??_dhtlib_read,w
   2443  038A  00CB               	movwf	dhtlib_read@bcount
   2444                           
-  2445                           ;DHTLib.c: 46: PORTBASE tocounter = 0;
+  2445                           ;DHTLib.c: 47: PORTBASE tocounter = 0;
   2446  038B  01CC               	clrf	dhtlib_read@tocounter
   2447                           
-  2448                           ;DHTLib.c: 49: for (i = 0; i < 5; i++) bits[i] = 0;
+  2448                           ;DHTLib.c: 50: for (i = 0; i < 5; i++) bits[i] = 0;
   2449  038C  01CD               	clrf	dhtlib_read@i
   2450  038D  3005               	movlw	5
   2451  038E  024D               	subwf	dhtlib_read@i,w
@@ -2474,24 +2474,24 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2467  039D  2B91               	goto	l2619
   2468  039E                     l73:	
   2469                           
-  2470                           ;DHTLib.c: 52: INTCONbits.GIE = 0;;
+  2470                           ;DHTLib.c: 53: INTCONbits.GIE = 0;;
   2471  039E  138B               	bcf	11,7	;volatile
   2472                           
-  2473                           ;DHTLib.c: 55: dhtlib_start();
+  2473                           ;DHTLib.c: 56: dhtlib_start();
   2474  039F  118A  26F0  118A   	fcall	_dhtlib_start
   2475                           
-  2476                           ;DHTLib.c: 58: tocounter = 1;
+  2476                           ;DHTLib.c: 59: tocounter = 1;
   2477  03A2  1283               	bcf	3,5	;RP0=0, select bank0
   2478  03A3  1303               	bcf	3,6	;RP1=0, select bank0
   2479  03A4  01CC               	clrf	dhtlib_read@tocounter
   2480  03A5  0ACC               	incf	dhtlib_read@tocounter,f
   2481  03A6                     l74:	
-  2482                           ;DHTLib.c: 59: while (!PORTBbits.RB2) {
+  2482                           ;DHTLib.c: 60: while (!PORTBbits.RB2) {
   2483                           
   2484  03A6  1906               	btfsc	6,2	;volatile
   2485  03A7  2BB3               	goto	l78
   2486                           
-  2487                           ;DHTLib.c: 60: if (!tocounter++) {
+  2487                           ;DHTLib.c: 61: if (!tocounter++) {
   2488  03A8  3001               	movlw	1
   2489  03A9  00C8               	movwf	??_dhtlib_read
   2490  03AA  0848               	movf	??_dhtlib_read,w
@@ -2501,26 +2501,26 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2494  03AE  1D03               	skipz
   2495  03AF  2BA6               	goto	l74
   2496                           
-  2497                           ;DHTLib.c: 61: INTCONbits.GIE = 1;;
+  2497                           ;DHTLib.c: 62: INTCONbits.GIE = 1;;
   2498  03B0  178B               	bsf	11,7	;volatile
   2499                           
-  2500                           ;DHTLib.c: 62: return E_DHTLIB_TIMEOUT_ERROR;
+  2500                           ;DHTLib.c: 63: return E_DHTLIB_TIMEOUT_ERROR;
   2501  03B1  3001               	movlw	1
   2502  03B2  0008               	return
   2503  03B3                     l78:	
   2504                           
-  2505                           ;DHTLib.c: 63: }
-  2506                           ;DHTLib.c: 64: }
-  2507                           ;DHTLib.c: 66: tocounter = 1;
+  2505                           ;DHTLib.c: 64: }
+  2506                           ;DHTLib.c: 65: }
+  2507                           ;DHTLib.c: 67: tocounter = 1;
   2508  03B3  01CC               	clrf	dhtlib_read@tocounter
   2509  03B4  0ACC               	incf	dhtlib_read@tocounter,f
   2510  03B5                     l79:	
-  2511                           ;DHTLib.c: 67: while (PORTBbits.RB2) {
+  2511                           ;DHTLib.c: 68: while (PORTBbits.RB2) {
   2512                           
   2513  03B5  1D06               	btfss	6,2	;volatile
   2514  03B6  2BC2               	goto	l2645
   2515                           
-  2516                           ;DHTLib.c: 68: if (!tocounter++) {
+  2516                           ;DHTLib.c: 69: if (!tocounter++) {
   2517  03B7  3001               	movlw	1
   2518  03B8  00C8               	movwf	??_dhtlib_read
   2519  03B9  0848               	movf	??_dhtlib_read,w
@@ -2530,17 +2530,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2523  03BD  1D03               	skipz
   2524  03BE  2BB5               	goto	l79
   2525                           
-  2526                           ;DHTLib.c: 69: INTCONbits.GIE = 1;;
+  2526                           ;DHTLib.c: 70: INTCONbits.GIE = 1;;
   2527  03BF  178B               	bsf	11,7	;volatile
   2528                           
-  2529                           ;DHTLib.c: 70: return E_DHTLIB_TIMEOUT_ERROR;
+  2529                           ;DHTLib.c: 71: return E_DHTLIB_TIMEOUT_ERROR;
   2530  03C0  3001               	movlw	1
   2531  03C1  0008               	return
   2532  03C2                     l2645:	
   2533                           
-  2534                           ;DHTLib.c: 71: }
-  2535                           ;DHTLib.c: 72: }
-  2536                           ;DHTLib.c: 74: for (i = 0; i < 40; i++) {
+  2534                           ;DHTLib.c: 72: }
+  2535                           ;DHTLib.c: 73: }
+  2536                           ;DHTLib.c: 75: for (i = 0; i < 40; i++) {
   2537  03C2  01CD               	clrf	dhtlib_read@i
   2538  03C3  3028               	movlw	40
   2539  03C4  024D               	subwf	dhtlib_read@i,w
@@ -2548,16 +2548,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2541  03C6  2C15               	goto	l84
   2542  03C7                     l83:	
   2543                           
-  2544                           ;DHTLib.c: 75: tocounter = 1;
+  2544                           ;DHTLib.c: 76: tocounter = 1;
   2545  03C7  01CC               	clrf	dhtlib_read@tocounter
   2546  03C8  0ACC               	incf	dhtlib_read@tocounter,f
   2547  03C9                     l85:	
-  2548                           ;DHTLib.c: 76: while (!PORTBbits.RB2) {
+  2548                           ;DHTLib.c: 77: while (!PORTBbits.RB2) {
   2549                           
   2550  03C9  1906               	btfsc	6,2	;volatile
   2551  03CA  2BD6               	goto	l2659
   2552                           
-  2553                           ;DHTLib.c: 77: if (!tocounter++) {
+  2553                           ;DHTLib.c: 78: if (!tocounter++) {
   2554  03CB  3001               	movlw	1
   2555  03CC  00C8               	movwf	??_dhtlib_read
   2556  03CD  0848               	movf	??_dhtlib_read,w
@@ -2567,17 +2567,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2560  03D1  1D03               	skipz
   2561  03D2  2BC9               	goto	l85
   2562                           
-  2563                           ;DHTLib.c: 78: INTCONbits.GIE = 1;;
+  2563                           ;DHTLib.c: 79: INTCONbits.GIE = 1;;
   2564  03D3  178B               	bsf	11,7	;volatile
   2565                           
-  2566                           ;DHTLib.c: 79: return E_DHTLIB_TIMEOUT_ERROR;
+  2566                           ;DHTLib.c: 80: return E_DHTLIB_TIMEOUT_ERROR;
   2567  03D4  3001               	movlw	1
   2568  03D5  0008               	return
   2569  03D6                     l2659:	
   2570                           
-  2571                           ;DHTLib.c: 80: }
-  2572                           ;DHTLib.c: 81: }
-  2573                           ;DHTLib.c: 83: _delay((unsigned long)((40)*(2000000/1000000.0)));
+  2571                           ;DHTLib.c: 81: }
+  2572                           ;DHTLib.c: 82: }
+  2573                           ;DHTLib.c: 84: _delay((unsigned long)((40)*(2000000/1000000.0)));
   2574  03D6  301A               	movlw	26
   2575  03D7  00C8               	movwf	??_dhtlib_read
   2576  03D8                     u2837:	
@@ -2585,36 +2585,36 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2578  03D9  2BD8               	goto	u2837
   2579  03DA  0000               	nop
   2580                           
-  2581                           ;DHTLib.c: 84: if (!PORTBbits.RB2) {
+  2581                           ;DHTLib.c: 85: if (!PORTBbits.RB2) {
   2582  03DB  1283               	bcf	3,5	;RP0=0, select bank0
   2583  03DC  1303               	bcf	3,6	;RP1=0, select bank0
   2584  03DD  1D06               	btfss	6,2	;volatile
   2585  03DE  2BFF               	goto	L3
   2586                           
-  2587                           ;DHTLib.c: 92: }
-  2588                           ;DHTLib.c: 94: tocounter = 1;
+  2587                           ;DHTLib.c: 93: }
+  2588                           ;DHTLib.c: 95: tocounter = 1;
   2589                           
-  2590                           ;DHTLib.c: 90: }
-  2591                           ;DHTLib.c: 91: continue;
+  2590                           ;DHTLib.c: 91: }
+  2591                           ;DHTLib.c: 92: continue;
   2592                           
-  2593                           ;DHTLib.c: 89: bcount--;
+  2593                           ;DHTLib.c: 90: bcount--;
   2594                           
-  2595                           ;DHTLib.c: 88: } else {
+  2595                           ;DHTLib.c: 89: } else {
   2596                           
-  2597                           ;DHTLib.c: 87: aindex++;
+  2597                           ;DHTLib.c: 88: aindex++;
   2598                           
-  2599                           ;DHTLib.c: 86: bcount = 7;
+  2599                           ;DHTLib.c: 87: bcount = 7;
   2600                           
-  2601                           ;DHTLib.c: 85: if (bcount == 0) {
+  2601                           ;DHTLib.c: 86: if (bcount == 0) {
   2602  03DF  01CC               	clrf	dhtlib_read@tocounter
   2603  03E0  0ACC               	incf	dhtlib_read@tocounter,f
   2604  03E1                     l93:	
-  2605                           ;DHTLib.c: 95: while (PORTBbits.RB2) {
+  2605                           ;DHTLib.c: 96: while (PORTBbits.RB2) {
   2606                           
   2607  03E1  1D06               	btfss	6,2	;volatile
   2608  03E2  2BEE               	goto	l2679
   2609                           
-  2610                           ;DHTLib.c: 96: if (!tocounter++) {
+  2610                           ;DHTLib.c: 97: if (!tocounter++) {
   2611  03E3  3001               	movlw	1
   2612  03E4  00C8               	movwf	??_dhtlib_read
   2613  03E5  0848               	movf	??_dhtlib_read,w
@@ -2624,17 +2624,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2617  03E9  1D03               	skipz
   2618  03EA  2BE1               	goto	l93
   2619                           
-  2620                           ;DHTLib.c: 97: INTCONbits.GIE = 1;;
+  2620                           ;DHTLib.c: 98: INTCONbits.GIE = 1;;
   2621  03EB  178B               	bsf	11,7	;volatile
   2622                           
-  2623                           ;DHTLib.c: 98: return E_DHTLIB_TIMEOUT_ERROR;
+  2623                           ;DHTLib.c: 99: return E_DHTLIB_TIMEOUT_ERROR;
   2624  03EC  3001               	movlw	1
   2625  03ED  0008               	return
   2626  03EE                     l2679:	
   2627                           
-  2628                           ;DHTLib.c: 99: }
-  2629                           ;DHTLib.c: 100: }
-  2630                           ;DHTLib.c: 102: bits[aindex] |= (1 << bcount);
+  2628                           ;DHTLib.c: 100: }
+  2629                           ;DHTLib.c: 101: }
+  2630                           ;DHTLib.c: 103: bits[aindex] |= (1 << bcount);
   2631  03EE  3001               	movlw	1
   2632  03EF  00C8               	movwf	??_dhtlib_read
   2633  03F0  0A4B               	incf	dhtlib_read@bcount,w
@@ -2656,28 +2656,28 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2649  03FE  0480               	iorwf	0,f
   2650  03FF                     L3:	
   2651                           
-  2652                           ;DHTLib.c: 103: if (bcount == 0) {
+  2652                           ;DHTLib.c: 104: if (bcount == 0) {
   2653  03FF  08CB               	movf	dhtlib_read@bcount,f
   2654  0400  1D03               	skipz
   2655  0401  2C0B               	goto	l2687
   2656                           
-  2657                           ;DHTLib.c: 104: bcount = 7;
+  2657                           ;DHTLib.c: 105: bcount = 7;
   2658  0402  3007               	movlw	7
   2659  0403  00C8               	movwf	??_dhtlib_read
   2660  0404  0848               	movf	??_dhtlib_read,w
   2661  0405  00CB               	movwf	dhtlib_read@bcount
   2662                           
-  2663                           ;DHTLib.c: 105: aindex++;
+  2663                           ;DHTLib.c: 106: aindex++;
   2664  0406  3001               	movlw	1
   2665  0407  00C8               	movwf	??_dhtlib_read
   2666  0408  0848               	movf	??_dhtlib_read,w
   2667  0409  07CA               	addwf	dhtlib_read@aindex,f
   2668                           
-  2669                           ;DHTLib.c: 106: } else {
+  2669                           ;DHTLib.c: 107: } else {
   2670  040A  2C0D               	goto	l92
   2671  040B                     l2687:	
   2672                           
-  2673                           ;DHTLib.c: 107: bcount--;
+  2673                           ;DHTLib.c: 108: bcount--;
   2674  040B  3001               	movlw	1
   2675  040C  02CB               	subwf	dhtlib_read@bcount,f
   2676  040D                     l92:	
@@ -2691,12 +2691,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2684  0414  2BC7               	goto	l83
   2685  0415                     l84:	
   2686                           
-  2687                           ;DHTLib.c: 108: }
-  2688                           ;DHTLib.c: 109: }
-  2689                           ;DHTLib.c: 111: INTCONbits.GIE = 1;;
+  2687                           ;DHTLib.c: 109: }
+  2688                           ;DHTLib.c: 110: }
+  2689                           ;DHTLib.c: 112: INTCONbits.GIE = 1;;
   2690  0415  178B               	bsf	11,7	;volatile
   2691                           
-  2692                           ;DHTLib.c: 113: return E_DHTLIB_OK;
+  2692                           ;DHTLib.c: 114: return E_DHTLIB_OK;
   2693  0416  3000               	movlw	0
   2694  0417  0008               	return
   2695  0418                     __end_of_dhtlib_read:	
@@ -2705,7 +2705,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2698  06F0                     __ptext9:	
   2699 ;; *************** function _dhtlib_start *****************
   2700 ;; Defined at:
-  2701 ;;		line 183 in file "../DHTLib.c"
+  2701 ;;		line 184 in file "../DHTLib.c"
   2702 ;; Parameters:    Size  Location     Type
   2703 ;;		None
   2704 ;; Auto vars:     Size  Location     Type
@@ -2737,7 +2737,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2730                           ;psect for function _dhtlib_start
   2731  06F0                     _dhtlib_start:	
   2732                           
-  2733                           ;DHTLib.c: 184: TRISBbits.TRISB2 = 0;
+  2733                           ;DHTLib.c: 185: TRISBbits.TRISB2 = 0;
   2734                           
   2735                           ;incstack = 0
   2736                           ; Regs used in _dhtlib_start: [wreg]
@@ -2745,13 +2745,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2738  06F1  1303               	bcf	3,6	;RP1=0, select bank1
   2739  06F2  1106               	bcf	6,2	;volatile
   2740                           
-  2741                           ;DHTLib.c: 185: {PORTBbits.RB2 = 0; PORTBbits.RB2 = 0;};
+  2741                           ;DHTLib.c: 186: {PORTBbits.RB2 = 0; PORTBbits.RB2 = 0;};
   2742  06F3  1283               	bcf	3,5	;RP0=0, select bank0
   2743  06F4  1303               	bcf	3,6	;RP1=0, select bank0
   2744  06F5  1106               	bcf	6,2	;volatile
   2745  06F6  1106               	bcf	6,2	;volatile
   2746                           
-  2747                           ;DHTLib.c: 187: _delay((unsigned long)((20)*(2000000/1000.0)));
+  2747                           ;DHTLib.c: 188: _delay((unsigned long)((20)*(2000000/1000.0)));
   2748  06F7  3034               	movlw	52
   2749  06F8  00F5               	movwf	??_dhtlib_start+1
   2750  06F9  30F1               	movlw	241
@@ -2763,18 +2763,18 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   2756  06FE  2EFB               	goto	u2847
   2757  06FF  2F00               	nop2
   2758                           
-  2759                           ;DHTLib.c: 189: {PORTBbits.RB2 = 1; PORTBbits.RB2 = 1;};
+  2759                           ;DHTLib.c: 190: {PORTBbits.RB2 = 1; PORTBbits.RB2 = 1;};
   2760  0700  1283               	bcf	3,5	;RP0=0, select bank0
   2761  0701  1303               	bcf	3,6	;RP1=0, select bank0
   2762  0702  1506               	bsf	6,2	;volatile
   2763  0703  1506               	bsf	6,2	;volatile
   2764                           
-  2765                           ;DHTLib.c: 190: TRISBbits.TRISB2 = 1;
+  2765                           ;DHTLib.c: 191: TRISBbits.TRISB2 = 1;
   2766  0704  1683               	bsf	3,5	;RP0=1, select bank1
   2767  0705  1303               	bcf	3,6	;RP1=0, select bank1
   2768  0706  1506               	bsf	6,2	;volatile
   2769                           
-  2770                           ;DHTLib.c: 192: _delay((unsigned long)((60)*(2000000/1000000.0)));
+  2770                           ;DHTLib.c: 193: _delay((unsigned long)((60)*(2000000/1000000.0)));
   2771  0707  3027               	movlw	39
   2772  0708  00F4               	movwf	??_dhtlib_start
   2773  0709                     u2857:	
@@ -3281,7 +3281,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   3273  077B                     __ptext16:	
   3274 ;; *************** function _dhtlib_init *****************
   3275 ;; Defined at:
-  3276 ;;		line 33 in file "../DHTLib.c"
+  3276 ;;		line 34 in file "../DHTLib.c"
   3277 ;; Parameters:    Size  Location     Type
   3278 ;;		None
   3279 ;; Auto vars:     Size  Location     Type
@@ -3313,7 +3313,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 54009
   3305                           ;psect for function _dhtlib_init
   3306  077B                     _dhtlib_init:	
   3307                           
-  3308                           ;DHTLib.c: 35: TRISBbits.TRISB2 = 1;
+  3308                           ;DHTLib.c: 36: TRISBbits.TRISB2 = 1;
   3309                           
   3310                           ;incstack = 0
   3311                           ; Regs used in _dhtlib_init: []
@@ -4728,7 +4728,7 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.21 build 54009 
-Symbol Table                                                                                   Fri Aug 22 01:27:07 2014
+Symbol Table                                                                                   Fri Aug 22 11:05:12 2014
 
               ?_lcd_iowrite4 0070                ?_lcd_iowrite8 0070                            pc 0002  
                 __CFG_CP$OFF 0000                           l73 039E                           l74 03A6  

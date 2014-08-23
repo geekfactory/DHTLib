@@ -7,7 +7,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S46 . . ]
 "1130
 [v _TRISBbits `VS46 ~T0 @X0 0 e@134 ]
-"39 ../DHTLib.c
+"40 ../DHTLib.c
 [c E1000 0 1 2 .. ]
 [n E1000 dhtlib_status E_DHTLIB_OK E_DHTLIB_TIMEOUT_ERROR E_DHTLIB_CHKSUM_ERROR  ]
 "302 /Applications/microchip/xc8/v1.21/include/pic16f88.h
@@ -982,45 +982,45 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _bits `uc ~T0 @X0 -> 5 `i e ]
 [; ;DHTLib.c: 22: unsigned char bits[5];
 [; ;DHTLib.c: 27: static void dhtlib_start();
-"33
+"34
 [v _dhtlib_init `(v ~T0 @X0 1 ef ]
 {
-[; ;DHTLib.c: 32: void dhtlib_init()
-[; ;DHTLib.c: 33: {
+[; ;DHTLib.c: 33: void dhtlib_init()
+[; ;DHTLib.c: 34: {
 [e :U _dhtlib_init ]
 [f ]
-[; ;DHTLib.c: 35: TRISBbits.TRISB2 = 1;
-"35
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 36: }
+[; ;DHTLib.c: 36: TRISBbits.TRISB2 = 1;
 "36
+[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
+[; ;DHTLib.c: 37: }
+"37
 [e :UE 89 ]
 }
-"39
+"40
 [v _dhtlib_read `(E1000 ~T0 @X0 1 sf ]
 {
-[; ;DHTLib.c: 38: static enum dhtlib_status dhtlib_read()
-[; ;DHTLib.c: 39: {
+[; ;DHTLib.c: 39: static enum dhtlib_status dhtlib_read()
+[; ;DHTLib.c: 40: {
 [e :U _dhtlib_read ]
 [f ]
-"40
-[v _i `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 40: unsigned char i = 0;
-[e = _i -> -> 0 `i `uc ]
 "41
-[v _aindex `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 41: unsigned char aindex = 0;
-[e = _aindex -> -> 0 `i `uc ]
+[v _i `uc ~T0 @X0 1 a ]
+[; ;DHTLib.c: 41: unsigned char i = 0;
+[e = _i -> -> 0 `i `uc ]
 "42
+[v _aindex `uc ~T0 @X0 1 a ]
+[; ;DHTLib.c: 42: unsigned char aindex = 0;
+[e = _aindex -> -> 0 `i `uc ]
+"43
 [v _bcount `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 42: unsigned char bcount = 7;
+[; ;DHTLib.c: 43: unsigned char bcount = 7;
 [e = _bcount -> -> 7 `i `uc ]
-"46
+"47
 [v _tocounter `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 46: PORTBASE tocounter = 0;
+[; ;DHTLib.c: 47: PORTBASE tocounter = 0;
 [e = _tocounter -> -> 0 `i `uc ]
-[; ;DHTLib.c: 49: for (i = 0; i < 5; i++) bits[i] = 0;
-"49
+[; ;DHTLib.c: 50: for (i = 0; i < 5; i++) bits[i] = 0;
+"50
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 5 `i 91  ]
@@ -1031,425 +1031,425 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < -> _i `i -> 5 `i 91  ]
 [e :U 92 ]
 }
-[; ;DHTLib.c: 52: INTCONbits.GIE = 0;;
-"52
+[; ;DHTLib.c: 53: INTCONbits.GIE = 0;;
+"53
 [e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;DHTLib.c: 55: dhtlib_start();
-"55
+[; ;DHTLib.c: 56: dhtlib_start();
+"56
 [e ( _dhtlib_start ..  ]
-[; ;DHTLib.c: 58: tocounter = 1;
-"58
-[e = _tocounter -> -> 1 `i `uc ]
-[; ;DHTLib.c: 59: while (!PORTBbits.RB2) {
+[; ;DHTLib.c: 59: tocounter = 1;
 "59
+[e = _tocounter -> -> 1 `i `uc ]
+[; ;DHTLib.c: 60: while (!PORTBbits.RB2) {
+"60
 [e $U 94  ]
 [e :U 95 ]
 {
-[; ;DHTLib.c: 60: if (!tocounter++) {
-"60
+[; ;DHTLib.c: 61: if (!tocounter++) {
+"61
 [e $ ! ! != -> ++ _tocounter -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 97  ]
 {
-[; ;DHTLib.c: 61: INTCONbits.GIE = 1;;
-"61
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 62: return E_DHTLIB_TIMEOUT_ERROR;
+[; ;DHTLib.c: 62: INTCONbits.GIE = 1;;
 "62
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;DHTLib.c: 63: return E_DHTLIB_TIMEOUT_ERROR;
+"63
 [e ) -> . `E1000 1 `E1000 ]
 [e $UE 90  ]
-"63
-}
-[e :U 97 ]
 "64
 }
+[e :U 97 ]
+"65
+}
 [e :U 94 ]
-"59
+"60
 [e $ ! != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 95  ]
 [e :U 96 ]
-[; ;DHTLib.c: 63: }
 [; ;DHTLib.c: 64: }
-[; ;DHTLib.c: 66: tocounter = 1;
-"66
-[e = _tocounter -> -> 1 `i `uc ]
-[; ;DHTLib.c: 67: while (PORTBbits.RB2) {
+[; ;DHTLib.c: 65: }
+[; ;DHTLib.c: 67: tocounter = 1;
 "67
+[e = _tocounter -> -> 1 `i `uc ]
+[; ;DHTLib.c: 68: while (PORTBbits.RB2) {
+"68
 [e $U 98  ]
 [e :U 99 ]
 {
-[; ;DHTLib.c: 68: if (!tocounter++) {
-"68
+[; ;DHTLib.c: 69: if (!tocounter++) {
+"69
 [e $ ! ! != -> ++ _tocounter -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 101  ]
 {
-[; ;DHTLib.c: 69: INTCONbits.GIE = 1;;
-"69
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 70: return E_DHTLIB_TIMEOUT_ERROR;
+[; ;DHTLib.c: 70: INTCONbits.GIE = 1;;
 "70
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;DHTLib.c: 71: return E_DHTLIB_TIMEOUT_ERROR;
+"71
 [e ) -> . `E1000 1 `E1000 ]
 [e $UE 90  ]
-"71
-}
-[e :U 101 ]
 "72
 }
+[e :U 101 ]
+"73
+}
 [e :U 98 ]
-"67
+"68
 [e $ != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 99  ]
 [e :U 100 ]
-[; ;DHTLib.c: 71: }
 [; ;DHTLib.c: 72: }
-[; ;DHTLib.c: 74: for (i = 0; i < 40; i++) {
-"74
+[; ;DHTLib.c: 73: }
+[; ;DHTLib.c: 75: for (i = 0; i < 40; i++) {
+"75
 {
 [e = _i -> -> 0 `i `uc ]
 [e $ < -> _i `i -> 40 `i 102  ]
 [e $U 103  ]
 [e :U 102 ]
 {
-[; ;DHTLib.c: 75: tocounter = 1;
-"75
-[e = _tocounter -> -> 1 `i `uc ]
-[; ;DHTLib.c: 76: while (!PORTBbits.RB2) {
+[; ;DHTLib.c: 76: tocounter = 1;
 "76
+[e = _tocounter -> -> 1 `i `uc ]
+[; ;DHTLib.c: 77: while (!PORTBbits.RB2) {
+"77
 [e $U 105  ]
 [e :U 106 ]
 {
-[; ;DHTLib.c: 77: if (!tocounter++) {
-"77
+[; ;DHTLib.c: 78: if (!tocounter++) {
+"78
 [e $ ! ! != -> ++ _tocounter -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 108  ]
 {
-[; ;DHTLib.c: 78: INTCONbits.GIE = 1;;
-"78
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 79: return E_DHTLIB_TIMEOUT_ERROR;
+[; ;DHTLib.c: 79: INTCONbits.GIE = 1;;
 "79
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;DHTLib.c: 80: return E_DHTLIB_TIMEOUT_ERROR;
+"80
 [e ) -> . `E1000 1 `E1000 ]
 [e $UE 90  ]
-"80
-}
-[e :U 108 ]
 "81
 }
+[e :U 108 ]
+"82
+}
 [e :U 105 ]
-"76
+"77
 [e $ ! != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 106  ]
 [e :U 107 ]
-[; ;DHTLib.c: 80: }
 [; ;DHTLib.c: 81: }
-[; ;DHTLib.c: 83: _delay((unsigned long)((40)*(2000000/1000000.0)));
-"83
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 2000000 `l `d .1000000.0 `ul ]
-[; ;DHTLib.c: 84: if (!PORTBbits.RB2) {
+[; ;DHTLib.c: 82: }
+[; ;DHTLib.c: 84: _delay((unsigned long)((40)*(2000000/1000000.0)));
 "84
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 2000000 `l `d .1000000.0 `ul ]
+[; ;DHTLib.c: 85: if (!PORTBbits.RB2) {
+"85
 [e $ ! ! != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 109  ]
 {
-[; ;DHTLib.c: 85: if (bcount == 0) {
-"85
+[; ;DHTLib.c: 86: if (bcount == 0) {
+"86
 [e $ ! == -> _bcount `i -> 0 `i 110  ]
 {
-[; ;DHTLib.c: 86: bcount = 7;
-"86
-[e = _bcount -> -> 7 `i `uc ]
-[; ;DHTLib.c: 87: aindex++;
+[; ;DHTLib.c: 87: bcount = 7;
 "87
-[e ++ _aindex -> -> 1 `i `uc ]
+[e = _bcount -> -> 7 `i `uc ]
+[; ;DHTLib.c: 88: aindex++;
 "88
+[e ++ _aindex -> -> 1 `i `uc ]
+"89
 }
-[; ;DHTLib.c: 88: } else {
+[; ;DHTLib.c: 89: } else {
 [e $U 111  ]
 [e :U 110 ]
 {
-[; ;DHTLib.c: 89: bcount--;
-"89
-[e -- _bcount -> -> 1 `i `uc ]
+[; ;DHTLib.c: 90: bcount--;
 "90
+[e -- _bcount -> -> 1 `i `uc ]
+"91
 }
 [e :U 111 ]
-[; ;DHTLib.c: 90: }
-[; ;DHTLib.c: 91: continue;
-"91
-[e $U 104  ]
+[; ;DHTLib.c: 91: }
+[; ;DHTLib.c: 92: continue;
 "92
+[e $U 104  ]
+"93
 }
 [e :U 109 ]
-[; ;DHTLib.c: 92: }
-[; ;DHTLib.c: 94: tocounter = 1;
-"94
-[e = _tocounter -> -> 1 `i `uc ]
-[; ;DHTLib.c: 95: while (PORTBbits.RB2) {
+[; ;DHTLib.c: 93: }
+[; ;DHTLib.c: 95: tocounter = 1;
 "95
+[e = _tocounter -> -> 1 `i `uc ]
+[; ;DHTLib.c: 96: while (PORTBbits.RB2) {
+"96
 [e $U 112  ]
 [e :U 113 ]
 {
-[; ;DHTLib.c: 96: if (!tocounter++) {
-"96
+[; ;DHTLib.c: 97: if (!tocounter++) {
+"97
 [e $ ! ! != -> ++ _tocounter -> -> 1 `i `uc `i -> -> -> 0 `i `uc `i 115  ]
 {
-[; ;DHTLib.c: 97: INTCONbits.GIE = 1;;
-"97
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 98: return E_DHTLIB_TIMEOUT_ERROR;
+[; ;DHTLib.c: 98: INTCONbits.GIE = 1;;
 "98
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;DHTLib.c: 99: return E_DHTLIB_TIMEOUT_ERROR;
+"99
 [e ) -> . `E1000 1 `E1000 ]
 [e $UE 90  ]
-"99
-}
-[e :U 115 ]
 "100
 }
+[e :U 115 ]
+"101
+}
 [e :U 112 ]
-"95
+"96
 [e $ != -> . . _PORTBbits 0 2 `i -> -> -> 0 `i `Vuc `i 113  ]
 [e :U 114 ]
-[; ;DHTLib.c: 99: }
 [; ;DHTLib.c: 100: }
-[; ;DHTLib.c: 102: bits[aindex] |= (1 << bcount);
-"102
-[e =| *U + &U _bits * -> _aindex `ux -> -> # *U &U _bits `ui `ux -> << -> 1 `i _bcount `uc ]
-[; ;DHTLib.c: 103: if (bcount == 0) {
+[; ;DHTLib.c: 101: }
+[; ;DHTLib.c: 103: bits[aindex] |= (1 << bcount);
 "103
+[e =| *U + &U _bits * -> _aindex `ux -> -> # *U &U _bits `ui `ux -> << -> 1 `i _bcount `uc ]
+[; ;DHTLib.c: 104: if (bcount == 0) {
+"104
 [e $ ! == -> _bcount `i -> 0 `i 116  ]
 {
-[; ;DHTLib.c: 104: bcount = 7;
-"104
-[e = _bcount -> -> 7 `i `uc ]
-[; ;DHTLib.c: 105: aindex++;
+[; ;DHTLib.c: 105: bcount = 7;
 "105
-[e ++ _aindex -> -> 1 `i `uc ]
+[e = _bcount -> -> 7 `i `uc ]
+[; ;DHTLib.c: 106: aindex++;
 "106
+[e ++ _aindex -> -> 1 `i `uc ]
+"107
 }
-[; ;DHTLib.c: 106: } else {
+[; ;DHTLib.c: 107: } else {
 [e $U 117  ]
 [e :U 116 ]
 {
-[; ;DHTLib.c: 107: bcount--;
-"107
-[e -- _bcount -> -> 1 `i `uc ]
+[; ;DHTLib.c: 108: bcount--;
 "108
-}
-[e :U 117 ]
+[e -- _bcount -> -> 1 `i `uc ]
 "109
 }
-"74
+[e :U 117 ]
+"110
+}
+"75
 [e :U 104 ]
 [e ++ _i -> -> 1 `i `uc ]
 [e $ < -> _i `i -> 40 `i 102  ]
 [e :U 103 ]
-"109
+"110
 }
-[; ;DHTLib.c: 108: }
 [; ;DHTLib.c: 109: }
-[; ;DHTLib.c: 111: INTCONbits.GIE = 1;;
-"111
+[; ;DHTLib.c: 110: }
+[; ;DHTLib.c: 112: INTCONbits.GIE = 1;;
+"112
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 113: return E_DHTLIB_OK;
-"113
+[; ;DHTLib.c: 114: return E_DHTLIB_OK;
+"114
 [e ) -> . `E1000 0 `E1000 ]
 [e $UE 90  ]
-[; ;DHTLib.c: 114: }
-"114
+[; ;DHTLib.c: 115: }
+"115
 [e :UE 90 ]
 }
-"117
+"118
 [v _dhtlib_read11 `(E1000 ~T0 @X0 1 ef2`*uc`*uc ]
 {
-[; ;DHTLib.c: 116: enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
-[; ;DHTLib.c: 117: {
+[; ;DHTLib.c: 117: enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
+[; ;DHTLib.c: 118: {
 [e :U _dhtlib_read11 ]
 [v _temp `*uc ~T0 @X0 1 r1 ]
 [v _hum `*uc ~T0 @X0 1 r2 ]
 [f ]
-"119
-[v _s `E1000 ~T0 @X0 1 a ]
-[; ;DHTLib.c: 119: enum dhtlib_status s = dhtlib_read();
-[e = _s ( _dhtlib_read ..  ]
-[; ;DHTLib.c: 120: if (s != E_DHTLIB_OK)
 "120
-[e $ ! != -> _s `i -> . `E1000 0 `i 119  ]
-[; ;DHTLib.c: 121: return s;
+[v _s `E1000 ~T0 @X0 1 a ]
+[; ;DHTLib.c: 120: enum dhtlib_status s = dhtlib_read();
+[e = _s ( _dhtlib_read ..  ]
+[; ;DHTLib.c: 121: if (s != E_DHTLIB_OK)
 "121
+[e $ ! != -> _s `i -> . `E1000 0 `i 119  ]
+[; ;DHTLib.c: 122: return s;
+"122
 [e ) _s ]
 [e $UE 118  ]
 [e :U 119 ]
-"123
-[v _chksum `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 123: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
-[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
-[; ;DHTLib.c: 124: if (chksum != bits[4])
 "124
-[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 120  ]
-[; ;DHTLib.c: 125: return E_DHTLIB_CHKSUM_ERROR;
+[v _chksum `uc ~T0 @X0 1 a ]
+[; ;DHTLib.c: 124: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
+[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
+[; ;DHTLib.c: 125: if (chksum != bits[4])
 "125
+[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 120  ]
+[; ;DHTLib.c: 126: return E_DHTLIB_CHKSUM_ERROR;
+"126
 [e ) -> . `E1000 2 `E1000 ]
 [e $UE 118  ]
 [e :U 120 ]
-[; ;DHTLib.c: 127: * hum = bits[0];
-"127
-[e = *U _hum *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux ]
-[; ;DHTLib.c: 128: * temp = bits[2];
+[; ;DHTLib.c: 128: * hum = bits[0];
 "128
+[e = *U _hum *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux ]
+[; ;DHTLib.c: 129: * temp = bits[2];
+"129
 [e = *U _temp *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux ]
-[; ;DHTLib.c: 130: return E_DHTLIB_OK;
-"130
+[; ;DHTLib.c: 131: return E_DHTLIB_OK;
+"131
 [e ) -> . `E1000 0 `E1000 ]
 [e $UE 118  ]
-[; ;DHTLib.c: 131: }
-"131
+[; ;DHTLib.c: 132: }
+"132
 [e :UE 118 ]
 }
-"134
+"135
 [v _dhtlib_read22 `(E1000 ~T0 @X0 1 ef2`*ui`*ui ]
 {
-[; ;DHTLib.c: 133: enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
-[; ;DHTLib.c: 134: {
+[; ;DHTLib.c: 134: enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
+[; ;DHTLib.c: 135: {
 [e :U _dhtlib_read22 ]
 [v _temp `*ui ~T0 @X0 1 r1 ]
 [v _hum `*ui ~T0 @X0 1 r2 ]
 [f ]
-"135
-[v _s `E1000 ~T0 @X0 1 a ]
-[; ;DHTLib.c: 135: enum dhtlib_status s = dhtlib_read();
-[e = _s ( _dhtlib_read ..  ]
-[; ;DHTLib.c: 136: if (s != E_DHTLIB_OK)
 "136
-[e $ ! != -> _s `i -> . `E1000 0 `i 122  ]
-[; ;DHTLib.c: 137: return s;
+[v _s `E1000 ~T0 @X0 1 a ]
+[; ;DHTLib.c: 136: enum dhtlib_status s = dhtlib_read();
+[e = _s ( _dhtlib_read ..  ]
+[; ;DHTLib.c: 137: if (s != E_DHTLIB_OK)
 "137
+[e $ ! != -> _s `i -> . `E1000 0 `i 122  ]
+[; ;DHTLib.c: 138: return s;
+"138
 [e ) _s ]
 [e $UE 121  ]
 [e :U 122 ]
-"139
-[v _chksum `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 139: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
-[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
-[; ;DHTLib.c: 140: if (chksum != bits[4])
 "140
-[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 123  ]
-[; ;DHTLib.c: 141: return E_DHTLIB_CHKSUM_ERROR;
+[v _chksum `uc ~T0 @X0 1 a ]
+[; ;DHTLib.c: 140: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
+[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
+[; ;DHTLib.c: 141: if (chksum != bits[4])
 "141
+[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 123  ]
+[; ;DHTLib.c: 142: return E_DHTLIB_CHKSUM_ERROR;
+"142
 [e ) -> . `E1000 2 `E1000 ]
 [e $UE 121  ]
 [e :U 123 ]
-[; ;DHTLib.c: 143: * hum = ((bits[0] << 8) + bits[1]) & 0x7FFF;
-"143
-[e = *U _hum -> & + << -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 32767 `i `ui ]
-[; ;DHTLib.c: 144: * temp = (bits[2] << 8) + bits[3];
+[; ;DHTLib.c: 144: * hum = ((bits[0] << 8) + bits[1]) & 0x7FFF;
 "144
+[e = *U _hum -> & + << -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 32767 `i `ui ]
+[; ;DHTLib.c: 145: * temp = (bits[2] << 8) + bits[3];
+"145
 [e = *U _temp -> + << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `ui ]
-[; ;DHTLib.c: 146: if (* temp & 0x8000) {
-"146
+[; ;DHTLib.c: 147: if (* temp & 0x8000) {
+"147
 [e $ ! != & *U _temp -> 32768 `ui -> -> 0 `i `ui 124  ]
 {
-[; ;DHTLib.c: 147: * temp = -((* temp) & 0x7FFF);
-"147
-[e = *U _temp -U & *U _temp -> -> 32767 `i `ui ]
+[; ;DHTLib.c: 148: * temp = -((* temp) & 0x7FFF);
 "148
+[e = *U _temp -U & *U _temp -> -> 32767 `i `ui ]
+"149
 }
 [e :U 124 ]
-[; ;DHTLib.c: 148: }
-[; ;DHTLib.c: 150: return E_DHTLIB_OK;
-"150
+[; ;DHTLib.c: 149: }
+[; ;DHTLib.c: 151: return E_DHTLIB_OK;
+"151
 [e ) -> . `E1000 0 `E1000 ]
 [e $UE 121  ]
-[; ;DHTLib.c: 152: }
-"152
+[; ;DHTLib.c: 153: }
+"153
 [e :UE 121 ]
 }
-"155
+"156
 [v _dhtlib_float22 `(E1000 ~T0 @X0 1 ef2`*f`*f ]
 {
-[; ;DHTLib.c: 154: enum dhtlib_status dhtlib_float22(float * temp, float * hum)
-[; ;DHTLib.c: 155: {
+[; ;DHTLib.c: 155: enum dhtlib_status dhtlib_float22(float * temp, float * hum)
+[; ;DHTLib.c: 156: {
 [e :U _dhtlib_float22 ]
 [v _temp `*f ~T0 @X0 1 r1 ]
 [v _hum `*f ~T0 @X0 1 r2 ]
 [f ]
-"156
-[v _s `E1000 ~T0 @X0 1 a ]
-[; ;DHTLib.c: 156: enum dhtlib_status s = dhtlib_read();
-[e = _s ( _dhtlib_read ..  ]
-[; ;DHTLib.c: 157: if (s != E_DHTLIB_OK)
 "157
-[e $ ! != -> _s `i -> . `E1000 0 `i 126  ]
-[; ;DHTLib.c: 158: return s;
+[v _s `E1000 ~T0 @X0 1 a ]
+[; ;DHTLib.c: 157: enum dhtlib_status s = dhtlib_read();
+[e = _s ( _dhtlib_read ..  ]
+[; ;DHTLib.c: 158: if (s != E_DHTLIB_OK)
 "158
+[e $ ! != -> _s `i -> . `E1000 0 `i 126  ]
+[; ;DHTLib.c: 159: return s;
+"159
 [e ) _s ]
 [e $UE 125  ]
 [e :U 126 ]
-"160
-[v _chksum `uc ~T0 @X0 1 a ]
-[; ;DHTLib.c: 160: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
-[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
-[; ;DHTLib.c: 161: if (chksum != bits[4])
 "161
-[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 127  ]
-[; ;DHTLib.c: 162: return E_DHTLIB_CHKSUM_ERROR;
+[v _chksum `uc ~T0 @X0 1 a ]
+[; ;DHTLib.c: 161: unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
+[e = _chksum -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc ]
+[; ;DHTLib.c: 162: if (chksum != bits[4])
 "162
+[e $ ! != -> _chksum `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 127  ]
+[; ;DHTLib.c: 163: return E_DHTLIB_CHKSUM_ERROR;
+"163
 [e ) -> . `E1000 2 `E1000 ]
 [e $UE 125  ]
 [e :U 127 ]
-[; ;DHTLib.c: 164: * hum = 0.1 * (((bits[0] << 8) + bits[1]) & 0x7FFF);
-"164
+[; ;DHTLib.c: 165: * hum = 0.1 * (((bits[0] << 8) + bits[1]) & 0x7FFF);
+"165
 [e = *U _hum -> * .0.1 -> & + << -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 32767 `i `d `f ]
-[; ;DHTLib.c: 166: if (bits[2] & 0x80) {
-"166
+[; ;DHTLib.c: 167: if (bits[2] & 0x80) {
+"167
 [e $ ! != & -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 128 `i -> 0 `i 128  ]
 {
-[; ;DHTLib.c: 167: *temp = -0.1 * ((bits[2] << 8) + bits[3]);
-"167
-[e = *U _temp -> * -U .0.1 -> + << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `d `f ]
+[; ;DHTLib.c: 168: *temp = -0.1 * ((bits[2] << 8) + bits[3]);
 "168
+[e = *U _temp -> * -U .0.1 -> + << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `d `f ]
+"169
 }
-[; ;DHTLib.c: 168: } else {
+[; ;DHTLib.c: 169: } else {
 [e $U 129  ]
 [e :U 128 ]
 {
-[; ;DHTLib.c: 169: *temp = 0.1 * ((bits[2] << 8) + bits[3]);
-"169
-[e = *U _temp -> * .0.1 -> + << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `d `f ]
+[; ;DHTLib.c: 170: *temp = 0.1 * ((bits[2] << 8) + bits[3]);
 "170
+[e = *U _temp -> * .0.1 -> + << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `d `f ]
+"171
 }
 [e :U 129 ]
-[; ;DHTLib.c: 170: }
-[; ;DHTLib.c: 173: return E_DHTLIB_OK;
-"173
+[; ;DHTLib.c: 171: }
+[; ;DHTLib.c: 174: return E_DHTLIB_OK;
+"174
 [e ) -> . `E1000 0 `E1000 ]
 [e $UE 125  ]
-[; ;DHTLib.c: 174: }
-"174
+[; ;DHTLib.c: 175: }
+"175
 [e :UE 125 ]
 }
-"183
+"184
 [v _dhtlib_start `(v ~T0 @X0 1 sf ]
 {
-[; ;DHTLib.c: 182: static void dhtlib_start()
-[; ;DHTLib.c: 183: {
+[; ;DHTLib.c: 183: static void dhtlib_start()
+[; ;DHTLib.c: 184: {
 [e :U _dhtlib_start ]
 [f ]
-[; ;DHTLib.c: 184: TRISBbits.TRISB2 = 0;
-"184
-[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
-[; ;DHTLib.c: 185: {PORTBbits.RB2 = 0; PORTBbits.RB2 = 0;};
+[; ;DHTLib.c: 185: TRISBbits.TRISB2 = 0;
 "185
+[e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
+[; ;DHTLib.c: 186: {PORTBbits.RB2 = 0; PORTBbits.RB2 = 0;};
+"186
 {
 [e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
 }
-[; ;DHTLib.c: 187: _delay((unsigned long)((20)*(2000000/1000.0)));
-"187
+[; ;DHTLib.c: 188: _delay((unsigned long)((20)*(2000000/1000.0)));
+"188
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 2000000 `l `d .1000.0 `ul ]
-[; ;DHTLib.c: 189: {PORTBbits.RB2 = 1; PORTBbits.RB2 = 1;};
-"189
+[; ;DHTLib.c: 190: {PORTBbits.RB2 = 1; PORTBbits.RB2 = 1;};
+"190
 {
 [e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
 [e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
 }
-[; ;DHTLib.c: 190: TRISBbits.TRISB2 = 1;
-"190
+[; ;DHTLib.c: 191: TRISBbits.TRISB2 = 1;
+"191
 [e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-[; ;DHTLib.c: 192: _delay((unsigned long)((60)*(2000000/1000000.0)));
-"192
-[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 2000000 `l `d .1000000.0 `ul ]
-[; ;DHTLib.c: 193: }
+[; ;DHTLib.c: 193: _delay((unsigned long)((60)*(2000000/1000000.0)));
 "193
+[e ( __delay (1 -> * -> -> 60 `i `d / -> -> 2000000 `l `d .1000000.0 `ul ]
+[; ;DHTLib.c: 194: }
+"194
 [e :UE 130 ]
 }

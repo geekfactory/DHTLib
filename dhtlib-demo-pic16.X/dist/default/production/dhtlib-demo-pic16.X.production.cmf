@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/cgt6pJzHR.obj
+$/tmp/cgtg4nZun.obj
 end_init CODE 0 11 11 2 2
 reset_vec CODE 0 0 0 2 2
 config CONFIG 0 2007 2007 2 2
@@ -98,21 +98,21 @@ STRING 0782-0FFF 2
 %LINETAB
 $dist/default/production/dhtlib-demo-pic16.X.production.obj
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":110 4 intentry CODE
-"/tmp/cgtjwMIA1":894 13 cinit CODE
-"/tmp/cgtjwMIA1":895 14 cinit CODE
-"/tmp/cgtjwMIA1":896 15 cinit CODE
-"/tmp/cgtjwMIA1":897 16 cinit CODE
-"/tmp/cgtjwMIA1":900 17 cinit CODE
-"/tmp/cgtjwMIA1":901 18 cinit CODE
-"/tmp/cgtjwMIA1":902 19 cinit CODE
-"/tmp/cgtjwMIA1":903 1A cinit CODE
-"/tmp/cgtjwMIA1":904 1B cinit CODE
-"/tmp/cgtjwMIA1":909 1E cinit CODE
-"/tmp/cgtjwMIA1":910 21 cinit CODE
-"/tmp/cgtjwMIA1":911 22 cinit CODE
-"/tmp/cgtjwMIA1":912 24 cinit CODE
-"/tmp/cgtjwMIA1":919 25 cinit CODE
-"/tmp/cgtjwMIA1":920 26 cinit CODE
+"/tmp/cgtsDvbQD":894 13 cinit CODE
+"/tmp/cgtsDvbQD":895 14 cinit CODE
+"/tmp/cgtsDvbQD":896 15 cinit CODE
+"/tmp/cgtsDvbQD":897 16 cinit CODE
+"/tmp/cgtsDvbQD":900 17 cinit CODE
+"/tmp/cgtsDvbQD":901 18 cinit CODE
+"/tmp/cgtsDvbQD":902 19 cinit CODE
+"/tmp/cgtsDvbQD":903 1A cinit CODE
+"/tmp/cgtsDvbQD":904 1B cinit CODE
+"/tmp/cgtsDvbQD":909 1E cinit CODE
+"/tmp/cgtsDvbQD":910 21 cinit CODE
+"/tmp/cgtsDvbQD":911 22 cinit CODE
+"/tmp/cgtsDvbQD":912 24 cinit CODE
+"/tmp/cgtsDvbQD":919 25 cinit CODE
+"/tmp/cgtsDvbQD":920 26 cinit CODE
 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c":542 28 text2 CODE
 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c":545 2F text2 CODE
 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c":547 3D text2 CODE
@@ -211,48 +211,48 @@ $dist/default/production/dhtlib-demo-pic16.X.production.obj
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":81 348 text1 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":83 365 text1 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":85 37A text1 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":40 383 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":41 383 text8 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":87 383 text1 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":41 386 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":42 387 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":46 38B text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":49 38C text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":52 39E text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":55 39F text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":58 3A2 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":59 3A6 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":60 3A8 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":61 3B0 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":62 3B1 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":66 3B3 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":67 3B5 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":68 3B7 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":69 3BF text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":70 3C0 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":74 3C2 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":75 3C7 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":76 3C9 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":77 3CB text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":78 3D3 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":79 3D4 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":83 3D6 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":84 3DB text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":94 3DF text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":95 3E1 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":96 3E3 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":97 3EB text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":98 3EC text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":102 3EE text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":103 3FF text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":104 402 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":105 406 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":106 40A text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":107 40B text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":74 40D text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":111 415 text8 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":113 416 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":42 386 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":43 387 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":47 38B text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":50 38C text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":53 39E text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":56 39F text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":59 3A2 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":60 3A6 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":61 3A8 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":62 3B0 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":63 3B1 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":67 3B3 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":68 3B5 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":69 3B7 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":70 3BF text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":71 3C0 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":75 3C2 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":76 3C7 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":77 3C9 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":78 3CB text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":79 3D3 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":80 3D4 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":84 3D6 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":85 3DB text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":95 3DF text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":96 3E1 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":97 3E3 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":98 3EB text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":99 3EC text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":103 3EE text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":104 3FF text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":105 402 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":106 406 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":107 40A text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":108 40B text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":75 40D text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":112 415 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":114 416 text8 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":25 418 strings STRING
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":114 418 text8 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":115 418 text8 CODE
 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c":354 428 strings STRING
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":24 432 strings STRING
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD-PIC16.c":84 474 text23 CODE
@@ -318,18 +318,18 @@ $dist/default/production/dhtlib-demo-pic16.X.production.obj
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":170 5DF text19 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":171 5E4 text19 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":172 5E5 text19 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":119 5EB text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":120 5EB text7 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c":174 5EB text19 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":120 5F6 text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":121 5F9 text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":123 5FB text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":124 606 text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":125 60A text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":127 60C text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":128 613 text7 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":130 619 text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":121 5F6 text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":122 5F9 text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":124 5FB text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":125 606 text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":126 60A text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":128 60C text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":129 613 text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":131 619 text7 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":42 61B maintext CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":131 61B text7 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":132 61B text7 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":43 61F maintext CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":46 620 maintext CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c":47 62E maintext CODE
@@ -379,13 +379,13 @@ $dist/default/production/dhtlib-demo-pic16.X.production.obj
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":66 6EA text14 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":67 6EC text14 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":68 6EF text14 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":184 6F0 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":185 6F3 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":187 6F7 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":189 700 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":190 704 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":192 707 text9 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":193 70C text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":185 6F0 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":186 6F3 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":188 6F7 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":190 700 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":191 704 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":193 707 text9 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":194 70C text9 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":49 70D text25 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":50 711 text25 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c":51 71F text25 CODE
@@ -411,16 +411,16 @@ $dist/default/production/dhtlib-demo-pic16.X.production.obj
 "/Applications/microchip/xc8/v1.21/sources/common/isdigit.c":13 765 text6 CODE
 "/Applications/microchip/xc8/v1.21/sources/common/isdigit.c":14 766 text6 CODE
 "/Applications/microchip/xc8/v1.21/sources/common/isdigit.c":15 773 text6 CODE
-"/tmp/cgtjwMIA1":882 773 clrtext CODE
-"/tmp/cgtjwMIA1":884 774 clrtext CODE
-"/tmp/cgtjwMIA1":885 775 clrtext CODE
-"/tmp/cgtjwMIA1":886 776 clrtext CODE
-"/tmp/cgtjwMIA1":887 777 clrtext CODE
-"/tmp/cgtjwMIA1":888 778 clrtext CODE
-"/tmp/cgtjwMIA1":889 779 clrtext CODE
-"/tmp/cgtjwMIA1":890 77A clrtext CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":35 77B text16 CODE
-"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":36 77E text16 CODE
+"/tmp/cgtsDvbQD":882 773 clrtext CODE
+"/tmp/cgtsDvbQD":884 774 clrtext CODE
+"/tmp/cgtsDvbQD":885 775 clrtext CODE
+"/tmp/cgtsDvbQD":886 776 clrtext CODE
+"/tmp/cgtsDvbQD":887 777 clrtext CODE
+"/tmp/cgtsDvbQD":888 778 clrtext CODE
+"/tmp/cgtsDvbQD":889 779 clrtext CODE
+"/tmp/cgtsDvbQD":890 77A clrtext CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":36 77B text16 CODE
+"/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c":37 77E text16 CODE
 "/Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD-PIC16.c":152 781 text20 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
@@ -456,13 +456,13 @@ _isr EAA 0 CODE 0 text24 dist/default/production/dhtlib-demo-pic16.X.production.
 _main C36 0 CODE 0 maintext dist/default/production/dhtlib-demo-pic16.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 _bits 26 0 BANK0 1 bssBANK0 dist/default/production/dhtlib-demo-pic16.X.production.obj
-start 22 0 CODE 0 init /tmp/cgt6pJzHR.obj
+start 22 0 CODE 0 init /tmp/cgtg4nZun.obj
 dht11_task@tb A1 0 BANK1 1 cstackBANK1 dist/default/production/dhtlib-demo-pic16.X.production.obj
 dhtlib_read@i 4D 0 BANK0 1 cstackBANK0 dist/default/production/dhtlib-demo-pic16.X.production.obj
 _TMR1H F 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 _TMR1L E 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 _PORTA 5 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
-reset_vec 0 0 CODE 0 reset_vec /tmp/cgt6pJzHR.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/cgtg4nZun.obj
 _ANSEL 9B 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 _T1CON 10 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 dhtlib_read@aindex 4A 0 BANK0 1 cstackBANK0 dist/default/production/dhtlib-demo-pic16.X.production.obj
@@ -580,7 +580,7 @@ __Hbank2 0 0 ABS 0 bank2 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Lbank3 0 0 ABS 0 bank3 -
-___latbits 1 0 ABS 0 - /tmp/cgt6pJzHR.obj
+___latbits 1 0 ABS 0 - /tmp/cgtg4nZun.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __Lpowerup 0 0 CODE 0 powerup -
 __ptext1 5CA 0 CODE 0 text1 dist/default/production/dhtlib-demo-pic16.X.production.obj
@@ -689,16 +689,16 @@ __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of_dhtlib_read 830 0 CODE 0 text8 dist/default/production/dhtlib-demo-pic16.X.production.obj
 __stringdata 86C 0 STRING 0 strings dist/default/production/dhtlib-demo-pic16.X.production.obj
 __end_of_dhtlib_init EFE 0 CODE 0 text16 dist/default/production/dhtlib-demo-pic16.X.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
+intlevel0 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 led_task@ltime 2F 0 BANK0 1 bssBANK0 dist/default/production/dhtlib-demo-pic16.X.production.obj
-intlevel1 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
+intlevel1 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
 _lcdcolumns 6D 0 BANK0 1 dataBANK0 dist/default/production/dhtlib-demo-pic16.X.production.obj
-intlevel2 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
-intlevel3 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
-intlevel4 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
+intlevel2 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
+intlevel3 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
+intlevel4 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
 __end_of_dhtlib_start E1A 0 CODE 0 text9 dist/default/production/dhtlib-demo-pic16.X.production.obj
-intlevel5 0 0 CODE 0 functab /tmp/cgt6pJzHR.obj
+intlevel5 0 0 CODE 0 functab /tmp/cgtg4nZun.obj
 __end_of_dhtlib_read11 C36 0 CODE 0 text7 dist/default/production/dhtlib-demo-pic16.X.production.obj
 __size_of___lwmod 0 0 ABS 0 - dist/default/production/dhtlib-demo-pic16.X.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -

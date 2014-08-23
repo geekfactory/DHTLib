@@ -5,7 +5,7 @@ Linker command line:
 --edf=/Applications/microchip/xc8/v1.21/dat/en_msgs.txt -cs \
   -h+dist/default/production/dhtlib-demo-pic16.X.production.sym \
   --cmf=dist/default/production/dhtlib-demo-pic16.X.production.cmf -z \
-  -Q16F88 -o/tmp/cgtSLUUp6 \
+  -Q16F88 -o/tmp/cgtxtK6jj \
   -Mdist/default/production/dhtlib-demo-pic16.X.production.map -E1 -ver=XC8 \
   -ACONST=00h-0FFhx16 -ACODE=00h-07FFhx2 -ASTRCODE=00h-0FFFh \
   -AENTRY=00h-0FFhx16 -ASTRING=00h-0FFhx16 -ACOMMON=070h-07Fh \
@@ -17,7 +17,7 @@ Linker command line:
   -pfunctab=CODE -ACONFIG=02007h-02008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k /tmp/cgt6pJzHR.obj \
+  -DENTRY=2 -k /tmp/cgtg4nZun.obj \
   dist/default/production/dhtlib-demo-pic16.X.production.obj 
 
 Object code version is 3.11
@@ -27,7 +27,7 @@ Machine type is 16F88
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/cgt6pJzHR.obj
+/tmp/cgtg4nZun.obj
                 end_init                             11       11        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             2007     2007        2     400E       0
@@ -742,7 +742,7 @@ Total ram usage:        2 bytes
 
  *************** function _dhtlib_read11 *****************
  Defined at:
-		line 117 in file "../DHTLib.c"
+		line 118 in file "../DHTLib.c"
  Parameters:    Size  Location     Type
   temp            1    wreg     PTR unsigned char 
 		 -> dht11_task@tb(1), 
@@ -778,7 +778,7 @@ Total ram usage:        7 bytes
 
  *************** function _dhtlib_read *****************
  Defined at:
-		line 39 in file "../DHTLib.c"
+		line 40 in file "../DHTLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -813,7 +813,7 @@ Total ram usage:        6 bytes
 
  *************** function _dhtlib_start *****************
  Defined at:
-		line 183 in file "../DHTLib.c"
+		line 184 in file "../DHTLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1027,7 +1027,7 @@ Total ram usage:        1 bytes
 
  *************** function _dhtlib_init *****************
  Defined at:
-		line 33 in file "../DHTLib.c"
+		line 34 in file "../DHTLib.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

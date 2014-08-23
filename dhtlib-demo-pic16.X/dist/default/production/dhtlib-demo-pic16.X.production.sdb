@@ -8,7 +8,7 @@ E_DHTLIB_OK 0
 E_DHTLIB_TIMEOUT_ERROR 1
 E_DHTLIB_CHKSUM_ERROR 2
 ]
-"39 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
+"40 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
 [e E1000 dhtlib_status `uc
 E_DHTLIB_OK 0
 E_DHTLIB_TIMEOUT_ERROR 1
@@ -59,17 +59,17 @@ E_EN_PIN 8
 E_RS_PIN 9
 E_RW_PIN 10
 ]
-"33 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
+"34 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
 [v _dhtlib_init dhtlib_init `(v  1 e 0 0 ]
-"39
+"40
 [v _dhtlib_read dhtlib_read `(E1000  1 s 1 dhtlib_read ]
-"117
+"118
 [v _dhtlib_read11 dhtlib_read11 `(E1128  1 e 1 0 ]
-"134
+"135
 [v _dhtlib_read22 dhtlib_read22 `(E1000  1 e 1 0 ]
-"155
+"156
 [v _dhtlib_float22 dhtlib_float22 `(E1000  1 e 1 0 ]
-"183
+"184
 [v _dhtlib_start dhtlib_start `(v  1 s 0 dhtlib_start ]
 "46 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD-PIC16.c
 [v _lcd_ioinit lcd_ioinit `(uc  1 e 1 0 ]
@@ -408,36 +408,36 @@ E_RW_PIN 10
 [v isdigit@c c `uc  1 a 1 5 ]
 "15
 } 0
-"117 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
+"118 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
 [v _dhtlib_read11 dhtlib_read11 `(E1128  1 e 1 0 ]
 {
 [v dhtlib_read11@temp temp `*.4uc  1 a 1 10 ]
-"119
+"120
 [v dhtlib_read11@s s `E1000  1 a 1 12 ]
-"123
+"124
 [v dhtlib_read11@chksum chksum `uc  1 a 1 11 ]
-"117
+"118
 [v dhtlib_read11@temp temp `*.4uc  1 a 1 10 ]
 [v dhtlib_read11@hum hum `*.4uc  1 p 1 6 ]
-"131
+"132
 } 0
-"39
+"40
 [v _dhtlib_read dhtlib_read `(E1000  1 s 1 dhtlib_read ]
 {
-"40
-[v dhtlib_read@i i `uc  1 a 1 5 ]
-"46
-[v dhtlib_read@tocounter tocounter `uc  1 a 1 4 ]
-"42
-[v dhtlib_read@bcount bcount `uc  1 a 1 3 ]
 "41
+[v dhtlib_read@i i `uc  1 a 1 5 ]
+"47
+[v dhtlib_read@tocounter tocounter `uc  1 a 1 4 ]
+"43
+[v dhtlib_read@bcount bcount `uc  1 a 1 3 ]
+"42
 [v dhtlib_read@aindex aindex `uc  1 a 1 2 ]
-"114
+"115
 } 0
-"183
+"184
 [v _dhtlib_start dhtlib_start `(v  1 s 0 dhtlib_start ]
 {
-"193
+"194
 } 0
 "148 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/LCD/LCD.c
 [v _lcd_goto lcd_goto `(v  1 e 0 0 ]
@@ -475,10 +475,10 @@ E_RW_PIN 10
 {
 "94
 } 0
-"33 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
+"34 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/DHTLib.c
 [v _dhtlib_init dhtlib_init `(v  1 e 0 0 ]
 {
-"36
+"37
 } 0
 "28 /Users/Jesus/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c
 [v _tick_init tick_init `(v  1 e 0 0 ]

@@ -1385,9 +1385,7 @@ unsigned char bits[5];
 
 static void dhtlib_start();
 
-
-
-
+# 33
 void dhtlib_init()
 {
 
@@ -1532,7 +1530,7 @@ if (bits[2] & 0x80) {
 return E_DHTLIB_OK;
 }
 
-# 182
+# 183
 static void dhtlib_start()
 {
 TRISBbits.TRISB2 = 0;
