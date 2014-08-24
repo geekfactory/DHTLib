@@ -18,7 +18,9 @@
 	Author e-mail: ruben at geekfactory dot mx
  */
 #include"DHTLib.h"
-
+/**
+ * Buffer to store data from sensors
+ */
 unsigned char bits[5];
 
 /*-------------------------------------------------------------*/
@@ -28,7 +30,6 @@ static void dhtlib_start();
 
 /*-------------------------------------------------------------*/
 /*		API Functions Implementation			*/
-
 /*-------------------------------------------------------------*/
 void dhtlib_init()
 {
@@ -36,7 +37,7 @@ void dhtlib_init()
 	dhtlib_setin();
 }
 
-static enum dhtlib_status dhtlib_read()
+static enum dht_status dhtlib_read()
 {
 	unsigned char i = 0;
 	unsigned char aindex = 0;
@@ -44,12 +45,13 @@ static enum dhtlib_status dhtlib_read()
 
 	// This is a variable used as timeout counter, type of this variable should
 	// be chosen according to the processor speed.
+	// When this variable overflows, timeout is detected
 	PORTBASE tocounter = 0;
 
 	// Clear all bits on data reception buffer
 	for (i = 0; i < 5; i++) bits[i] = 0;
 
-	// Disable interrupts to keep timing accurate
+	// Disable interrupts to keep timing accurate, especially on slow procesors
 	dhtlib_disint();
 
 	// Generate MCU start signal
@@ -58,27 +60,21 @@ static enum dhtlib_status dhtlib_read()
 	// Wait for response from DHT11 max 80 uS low
 	tocounter = 1;
 	while (!dhtlib_testpin()) {
-		if (!tocounter++) { // Check for timeout
-			dhtlib_enaint(); // Re-enable interrupts and return
-			return E_DHTLIB_TIMEOUT_ERROR;
-		}
+		if (!tocounter++)
+			goto timeout;
 	}
 	// Wait for response from DHT11 max 80 uS high
 	tocounter = 1;
 	while (dhtlib_testpin()) {
-		if (!tocounter++) {
-			dhtlib_enaint();
-			return E_DHTLIB_TIMEOUT_ERROR;
-		}
+		if (!tocounter++)
+			goto timeout;
 	}
 	// Begin data reception, 40 bits to be received
 	for (i = 0; i < 40; i++) {
 		tocounter = 1;
 		while (!dhtlib_testpin()) {
-			if (!tocounter++) {
-				dhtlib_enaint();
-				return E_DHTLIB_TIMEOUT_ERROR;
-			}
+			if (!tocounter++)
+				goto timeout;
 		}
 		// If after 50 uS the pin is low we're on the start of another bit
 		delay_us(40);
@@ -94,10 +90,8 @@ static enum dhtlib_status dhtlib_read()
 		// If pin is high after 50 us we're receiving logic high
 		tocounter = 1;
 		while (dhtlib_testpin()) {
-			if (!tocounter++) {
-				dhtlib_enaint();
-				return E_DHTLIB_TIMEOUT_ERROR;
-			}
+			if (!tocounter++)
+				goto timeout;
 		}
 		// Set the bit and shift left
 		bits[aindex] |= (1 << bcount);
@@ -108,42 +102,45 @@ static enum dhtlib_status dhtlib_read()
 			bcount--;
 		}
 	}
-	// Enable interrupts again
+	// Exit for normal operation
 	dhtlib_enaint();
-
 	return E_DHTLIB_OK;
+	// Exit when timeout occurs
+timeout:
+	dhtlib_enaint(); // Re-enable interrupts and return
+	return E_DHTLIB_TIMEOUT_ERROR;
 }
 
-enum dhtlib_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
+enum dht_status dhtlib_read11(uint8_t * temp, uint8_t * hum)
 {
 	// Read operation
-	enum dhtlib_status s = dhtlib_read();
+	enum dht_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
 	unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
 	if (chksum != bits[4])
 		return E_DHTLIB_CHKSUM_ERROR;
-
+	// Copy results
 	* hum = bits[0];
 	* temp = bits[2];
 	// Return Ok code
 	return E_DHTLIB_OK;
 }
 
-enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
+enum dht_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
 {
-	enum dhtlib_status s = dhtlib_read();
+	// Read operation
+	enum dht_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
 	// Checksum comprobation
 	unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
 	if (chksum != bits[4])
 		return E_DHTLIB_CHKSUM_ERROR;
-
+	// Copy results
 	* hum = ((bits[0] << 8) + bits[1]) & 0x7FFF;
 	* temp = (bits[2] << 8) + bits[3];
-
 	if (* temp & 0x8000) {
 		* temp = -((* temp) & 0x7FFF);
 	}
@@ -152,24 +149,23 @@ enum dhtlib_status dhtlib_read22(uint16_t * temp, uint16_t * hum)
 
 }
 
-enum dhtlib_status dhtlib_float22(float * temp, float * hum)
+enum dht_status dhtlib_float22(float * temp, float * hum)
 {
-	enum dhtlib_status s = dhtlib_read();
+	// Read operation
+	enum dht_status s = dhtlib_read();
 	if (s != E_DHTLIB_OK)
 		return s;
-
+	// Checksum comprobation
 	unsigned char chksum = bits[0] + bits[1] + bits[2] + bits[3];
 	if (chksum != bits[4])
 		return E_DHTLIB_CHKSUM_ERROR;
-
+	// Copy results
 	* hum = 0.1 * (((bits[0] << 8) + bits[1]) & 0x7FFF);
-
 	if (bits[2] & 0x80) {
 		*temp = -0.1 * ((bits[2] << 8) + bits[3]);
 	} else {
 		*temp = 0.1 * ((bits[2] << 8) + bits[3]);
 	}
-
 	// Return Ok code
 	return E_DHTLIB_OK;
 }

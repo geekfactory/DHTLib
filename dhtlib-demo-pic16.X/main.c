@@ -78,7 +78,7 @@ void dht11_task()
 		// Colocar el cursor en la segunda linea
 		lcd_goto(0, 1);
 		// Dar formato e imprimir el texto
-		enum dhtlib_status eResult = dhtlib_read11(&tb, &hb);
+		enum dht_status eResult = dhtlib_read11(&tb, &hb);
 		if (eResult == E_DHTLIB_OK)
 			sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
 		else

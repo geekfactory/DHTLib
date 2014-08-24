@@ -1,10 +1,10 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"10 /Applications/microchip/xc8/v1.21/include/stdarg.h
+"10 C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdarg.h
 [v ___va_start `(*v ~T0 @X0 0 ef ]
 [p i ___va_start ]
-"7 /Applications/microchip/xc8/v1.21/include/ctype.h
+"7 C:\Program Files (x86)\Microchip\xc8\v1.12\include\ctype.h
 [v _isdigit `(b ~T0 @X0 0 ef1`uc ]
-"13 /Applications/microchip/xc8/v1.21/include/stdarg.h
+"13 C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdarg.h
 [v ___va_arg `(*v ~T0 @X0 0 ev`*v ]
 [p i ___va_arg ]
 [; ;stdio.h: 8: typedef int ptrdiff_t;
@@ -194,7 +194,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;math.h: 26: extern double fmod(double, double);
 [; ;math.h: 27: extern double trunc(double);
 [; ;math.h: 28: extern double round(double);
-"13 /Applications/microchip/xc8/v1.21/sources/common/doprnt.c
+"13 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
 [p n 350 ]
 "354
 [v _dpowers `Cui ~T0 @X0 -> 0 `x s ]
@@ -229,13 +229,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _prec `c ~T0 @X0 1 a ]
 "508
 [v _flag `uc ~T0 @X0 1 a ]
-"529
+"533
 [s S7 `*Cuc 1 `ui 1 ]
 [n S7 . _cp _len ]
-"527
 [u S6 `ui 1 `S7 1 ]
 [n S6 . _val _str ]
-"533
 [v __val `S6 ~T0 @X0 1 a ]
 [; ;doprnt.c: 494: va_list ap;
 [; ;doprnt.c: 499: signed char c;

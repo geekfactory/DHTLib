@@ -4,9 +4,9 @@
 ../Tick/TickPort.h  \
 ../LCD/LCD.h  \
 ../Tick/Tick.h  \
-../LCD/../Delay/Delay.h  \
 ../Delay/Delay.h  \
 ../DHTLibPort.h  \
+../LCD/Delay/Delay.h  \
 ../DHTLibConf.h  \
 ../DHTLib.h  \
-../LCD/../Delay/DelayPort.h 
+../LCD/Delay/DelayPort.h 

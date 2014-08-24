@@ -1,23 +1,20 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "314 ../LCD/LCD.h
 [v _lcd_ioinit `(uc ~T0 @X0 0 ef1`*v ]
-"151 /Applications/microchip/xc8/v1.21/include/pic.h
+"151 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic.h
 [v __delay `(v ~T0 @X0 0 ef1`ul ]
 [p i __delay ]
 "344 ../LCD/LCD.h
 [v _lcd_iowrite4 `(v ~T0 @X0 0 ef1`uc ]
 "251
 [v _lcd_send `(v ~T0 @X0 0 ef2`uc`uc ]
-"53 ../LCD/LCD.c
 [c E999 1 2 4 8 16 32 64 128 .. ]
 [n E999 enLcdCommands E_CLEAR_DISPLAY E_RETURN_HOME E_ENTRY_MODE_SET E_DISPLAY_ON_OFF_CTRL E_CURSOR_DISPLAY_SHIFT E_FUNCTION_SET E_SET_CGRAM_ADDR E_SET_DDRAM_ADDR  ]
-"104
 [c E1008 0 2 3 .. ]
 [n E1008 enLCDCursorModes E_LCD_CURSOR_OFF E_LCD_CURSOR_ON E_LCD_CURSOR_ON_BLINK  ]
-"162
 [c E1012 0 1 2 3 4 5 6 7 8 9 10 .. ]
 [n E1012 enLCDControlPins E_D0_PIN E_D1_PIN E_D2_PIN E_D3_PIN E_D4_PIN E_D5_PIN E_D6_PIN E_D7_PIN E_EN_PIN E_RS_PIN E_RW_PIN  ]
-"327 ../LCD/LCD.h
+"327
 [v _lcd_ioset `(v ~T0 @X0 0 ef2`E1012`uc ]
 "357
 [v _lcd_iowrite8 `(v ~T0 @X0 0 ef1`uc ]
@@ -50,7 +47,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;pic16f88.h: 44: extern volatile unsigned char INDF @ 0x000;
-"46 /Applications/microchip/xc8/v1.21/include/pic16f88.h
+"46 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
 [; ;pic16f88.h: 46: asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
 [; ;pic16f88.h: 50: extern volatile unsigned char TMR0 @ 0x001;

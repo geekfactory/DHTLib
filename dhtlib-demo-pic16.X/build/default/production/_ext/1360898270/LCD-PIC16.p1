@@ -1,42 +1,33 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"1119 /Applications/microchip/xc8/v1.21/include/pic16f88.h
 [s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S47 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"1118
 [u S46 `S47 1 ]
 [n S46 . . ]
-"1130
+"1130 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
 [v _TRISBbits `VS46 ~T0 @X0 0 e@134 ]
-"1058
 [s S45 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S45 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1057
 [u S44 `S45 1 ]
 [n S44 . . ]
 "1069
 [v _TRISAbits `VS44 ~T0 @X0 0 e@133 ]
-"73 ../LCD/LCD-PIC16.c
 [c E1012 0 1 2 3 4 5 6 7 8 9 10 .. ]
 [n E1012 enLCDControlPins E_D0_PIN E_D1_PIN E_D2_PIN E_D3_PIN E_D4_PIN E_D5_PIN E_D6_PIN E_D7_PIN E_EN_PIN E_RS_PIN E_RW_PIN  ]
 "327 ../LCD/LCD.h
 [v _lcd_ioset `(v ~T0 @X0 0 ef2`E1012`uc ]
-"161 /Applications/microchip/xc8/v1.21/include/pic16f88.h
 [s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S7 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"160
 [u S6 `S7 1 ]
 [n S6 . . ]
-"172
+"172 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
 [v _PORTAbits `VS6 ~T0 @X0 0 e@5 ]
-"222
 [s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S9 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"221
 [u S8 `S9 1 ]
 [n S8 . . ]
 "233
 [v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
-"151 /Applications/microchip/xc8/v1.21/include/pic.h
+"151 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic.h
 [v __delay `(v ~T0 @X0 0 ef1`ul ]
 [p i __delay ]
 [; ;stdint.h: 13: typedef signed char int8_t;
@@ -68,7 +59,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;pic16f88.h: 44: extern volatile unsigned char INDF @ 0x000;
-"46 /Applications/microchip/xc8/v1.21/include/pic16f88.h
+"46 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
 [; ;pic16f88.h: 46: asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
 [; ;pic16f88.h: 50: extern volatile unsigned char TMR0 @ 0x001;

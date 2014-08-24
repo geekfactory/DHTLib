@@ -1,12 +1,12 @@
 
-# 1 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c"
+# 1 "C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c"
 
-# 8 "/Applications/microchip/xc8/v1.21/include/stdio.h"
+# 8 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdio.h"
 typedef int ptrdiff_t;
 typedef unsigned size_t;
 typedef unsigned short wchar_t;
 
-# 7 "/Applications/microchip/xc8/v1.21/include/stdarg.h"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdarg.h"
 typedef void * va_list[1];
 
 #pragma intrinsic(__va_start)
@@ -15,7 +15,7 @@ extern void * __va_start(void);
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
 
-# 23 "/Applications/microchip/xc8/v1.21/include/stdio.h"
+# 23 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdio.h"
 extern int errno;
 
 # 54
@@ -25,7 +25,7 @@ char * ptr;
 void (* func)(char);
 };
 
-# 17 "/Applications/microchip/xc8/v1.21/include/conio.h"
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\conio.h"
 extern int errno;
 
 
@@ -42,7 +42,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 99 "/Applications/microchip/xc8/v1.21/include/stdio.h"
+# 99 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdio.h"
 extern int cprintf(char *, ...);
 #pragma printf_check(cprintf)
 
@@ -69,7 +69,7 @@ extern int vsscanf(const char *, const char *, va_list);
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
 
-# 4 "/Applications/microchip/xc8/v1.21/include/ctype.h"
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\ctype.h"
 extern __bit isalpha(char);
 extern __bit isupper(char);
 extern __bit islower(char);
@@ -86,7 +86,7 @@ extern __bit iscntrl(char);
 extern char toupper(char);
 extern char tolower(char);
 
-# 27 "/Applications/microchip/xc8/v1.21/include/stdlib.h"
+# 27 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\stdlib.h"
 typedef struct {
 int rem;
 int quot;
@@ -154,7 +154,7 @@ extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
 
-# 22 "/Applications/microchip/xc8/v1.21/include/string.h"
+# 22 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\string.h"
 extern void * memcpy(void *, const void *, size_t);
 extern void * memmove(void *, const void *, size_t);
 extern void * memset(void *, int, size_t);
@@ -186,7 +186,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 
-# 17 "/Applications/microchip/xc8/v1.21/include/conio.h"
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\conio.h"
 extern int errno;
 
 
@@ -203,7 +203,7 @@ extern __bit kbhit(void);
 extern char * cgets(char *);
 extern void cputs(const char *);
 
-# 17 "/Applications/microchip/xc8/v1.21/include/sys.h"
+# 17 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\sys.h"
 extern int errno;
 
 # 30
@@ -243,7 +243,7 @@ extern void brk(void *);
 extern int _pnum(unsigned long, signed char, signed char, unsigned char, unsigned char, struct __prbuf *, unsigned char);
 extern int _fnum(double, short, short, short, struct __prbuf *, short);
 
-# 3 "/Applications/microchip/xc8/v1.21/include/math.h"
+# 3 "C:\Program Files (x86)\Microchip\xc8\v1.12\include\math.h"
 extern double fabs(double);
 extern double floor(double);
 extern double ceil(double);
@@ -272,7 +272,7 @@ extern double trunc(double);
 extern double round(double);
 
 
-# 13 "/Applications/microchip/xc8/v1.21/sources/common/doprnt.c"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c"
 #pragma warning disable 350
 
 # 354
