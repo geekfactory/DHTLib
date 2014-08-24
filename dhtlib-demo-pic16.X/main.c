@@ -41,6 +41,8 @@ void main()
 	//OSCCON = 0x6C; // Para usar el oscilador interno PIC16F88 4 Mhz
 	OSCCON = 0x7C; // Para usar el oscilador interno PIC16F88 8 Mhz
 	ANSEL = 0x00; // Configuracion de canales analogicos en PIC16F88
+	TRISA = 0xE0;
+	TRISB = 0xFF;
 
 	// Preparamos las librerías para su uso
 	lcd_init(0, 16, 2); // Iniciar el controlador de pantalla
@@ -97,8 +99,6 @@ void led_task()
 
 	if (tick_get() - ltime >= TICK_SECOND / 2) {
 		ltime = tick_get();
-		//lcd_goto(0, 0);
-		//lcd_write(ucIconNumber++ & 0x03);
 		PORTA ^= 0x10;
 	}
 }
