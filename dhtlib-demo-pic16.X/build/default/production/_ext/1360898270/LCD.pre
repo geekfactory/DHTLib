@@ -1449,7 +1449,7 @@ void lcd_iowrite4(uint8_t data);
 # 357
 void lcd_iowrite8(uint8_t data);
 
-# 24 "../LCD/LCD.c"
+# 23 "../LCD/LCD.c"
 const uint8_t rowaddr[4] = {0x00, 0x40, 0x14, 0x54};
 uint8_t lcdrows = 2;
 uint8_t lcdcolumns = 16;
@@ -1465,40 +1465,40 @@ lcdrows = rows;
 lcdcolumns = cols;
 
 
-_delay((unsigned long)((100)*(1000000/1000.0)));
+_delay((unsigned long)((100)*(2000000/1000.0)));
 
 
 if (iomode == 4) {
 
 
 lcd_iowrite4(0x03);
-_delay((unsigned long)((5)*(1000000/1000.0)));
+_delay((unsigned long)((5)*(2000000/1000.0)));
 lcd_iowrite4(0x03);
-_delay((unsigned long)((120)*(1000000/1000000.0)));
+_delay((unsigned long)((120)*(2000000/1000000.0)));
 lcd_iowrite4(0x03);
-_delay((unsigned long)((120)*(1000000/1000000.0)));
+_delay((unsigned long)((120)*(2000000/1000000.0)));
 lcd_iowrite4(0x02);
-_delay((unsigned long)((120)*(1000000/1000000.0)));
+_delay((unsigned long)((120)*(2000000/1000000.0)));
 lcd_send( E_FUNCTION_SET | 0 | (1<<3) | (1<<2), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 } else if (iomode == 8) {
 
 lcd_send( E_FUNCTION_SET, 0 );
-_delay((unsigned long)((5)*(1000000/1000.0)));
+_delay((unsigned long)((5)*(2000000/1000.0)));
 lcd_send( E_FUNCTION_SET, 0 );
-_delay((unsigned long)((120)*(1000000/1000000.0)));
+_delay((unsigned long)((120)*(2000000/1000000.0)));
 lcd_send( E_FUNCTION_SET, 0 );
-_delay((unsigned long)((120)*(1000000/1000000.0)));
+_delay((unsigned long)((120)*(2000000/1000000.0)));
 lcd_send( E_FUNCTION_SET | (1<<4) | (1<<3) | (1<<2), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 lcd_send( E_DISPLAY_ON_OFF_CTRL | 0, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 lcd_send( E_CLEAR_DISPLAY, 0 );
-_delay((unsigned long)((2)*(1000000/1000.0)));
+_delay((unsigned long)((2)*(2000000/1000.0)));
 lcd_send( E_ENTRY_MODE_SET | 0 | (1<<1), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 
 return 1;
 }
@@ -1506,27 +1506,27 @@ return 1;
 void lcd_clear()
 {
 lcd_send( E_CLEAR_DISPLAY, 0 );
-_delay((unsigned long)((2)*(1000000/1000.0)));
+_delay((unsigned long)((2)*(2000000/1000.0)));
 }
 
 void lcd_home()
 {
 lcd_send( E_RETURN_HOME, 0 );
-_delay((unsigned long)((2)*(1000000/1000.0)));
+_delay((unsigned long)((2)*(2000000/1000.0)));
 }
 
 void lcd_on()
 {
 dispctrl |= (1<<2);
 lcd_send( E_DISPLAY_ON_OFF_CTRL | dispctrl, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_off()
 {
 dispctrl &= ~(1<<2);
 lcd_send( E_DISPLAY_ON_OFF_CTRL | dispctrl, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_cursor(enum enLCDCursorModes mode)
@@ -1534,43 +1534,43 @@ void lcd_cursor(enum enLCDCursorModes mode)
 dispctrl &= 0xFC;
 dispctrl |= mode;
 lcd_send( E_DISPLAY_ON_OFF_CTRL | dispctrl, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_cursor_left()
 {
 lcd_send( E_CURSOR_DISPLAY_SHIFT | 0 | 0, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_cursor_right()
 {
 lcd_send( E_CURSOR_DISPLAY_SHIFT | 0 | (1<<2), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_scroll_left()
 {
 lcd_send( E_CURSOR_DISPLAY_SHIFT | (1<<3) | 0, 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_scroll_right()
 {
 lcd_send( E_CURSOR_DISPLAY_SHIFT | (1<<3) | (1<<2), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_autoscroll_on()
 {
 lcd_send( E_ENTRY_MODE_SET | (1<<0) | (1<<1), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_autoscroll_off()
 {
 lcd_send( E_ENTRY_MODE_SET | 0 | (1<<1), 0 );
-_delay((unsigned long)((50)*(1000000/1000000.0)));
+_delay((unsigned long)((50)*(2000000/1000000.0)));
 }
 
 void lcd_goto(uint8_t col, uint8_t row)

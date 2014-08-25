@@ -8,9 +8,9 @@ E_DHTLIB_OK 0
 E_DHTLIB_TIMEOUT_ERROR 1
 E_DHTLIB_CHKSUM_ERROR 2
 ]
-"110 main.c
+"102 main.c
 [v F1155 `(v  1 t 0 ]
-"114
+"106
 [s S101 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -103,7 +103,7 @@ E_EN_PIN 8
 E_RS_PIN 9
 E_RW_PIN 10
 ]
-"189 ../LCD/LCD.c
+"188 ../LCD/LCD.c
 [s S387 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -184,37 +184,37 @@ E_RW_PIN 10
 [v _lcd_iowrite4 `(v  1 e 0 0 ]
 "141
 [v _lcd_iowrite8 `(v  1 e 0 0 ]
-"32 ../LCD/LCD.c
+"31 ../LCD/LCD.c
 [v _lcd_init `(uc  1 e 1 0 ]
-"78
+"77
 [v _lcd_clear `(v  1 e 0 0 ]
-"84
+"83
 [v _lcd_home `(v  1 e 0 0 ]
-"90
+"89
 [v _lcd_on `(v  1 e 0 0 ]
-"97
+"96
 [v _lcd_off `(v  1 e 0 0 ]
-"104
+"103
 [v _lcd_cursor `(v  1 e 0 0 ]
-"112
+"111
 [v _lcd_cursor_left `(v  1 e 0 0 ]
-"118
+"117
 [v _lcd_cursor_right `(v  1 e 0 0 ]
-"124
+"123
 [v _lcd_scroll_left `(v  1 e 0 0 ]
-"130
+"129
 [v _lcd_scroll_right `(v  1 e 0 0 ]
-"136
+"135
 [v _lcd_autoscroll_on `(v  1 e 0 0 ]
-"142
+"141
 [v _lcd_autoscroll_off `(v  1 e 0 0 ]
-"148
+"147
 [v _lcd_goto `(v  1 e 0 0 ]
-"159
+"158
 [v _lcd_send `(v  1 e 0 0 ]
-"177
+"176
 [v _lcd_puts `(v  1 e 0 0 ]
-"183
+"182
 [v _lcd_create_char `(v  1 e 0 0 ]
 "28 ../Tick/Tick-PIC16.c
 [v _tick_init `(v  1 e 0 0 ]
@@ -328,25 +328,25 @@ E_RW_PIN 10
 [v ___fttoee `(f  1 e 3 0 ]
 "132
 [v ___fltoee `(d  1 e 3 0 ]
-"40 main.c
+"34 main.c
 [v _main `(v  1 e 0 0 ]
-"69
+"61
 [v _dht11_task `(v  1 e 0 0 ]
-"96
+"88
 [v _led_task `(v  1 e 0 0 ]
-"110
+"102
 [v _isr `II(v  1 e 0 0 ]
 "24 ../DHTLib.c
 [v _bits `[5]uc  1 e 5 0 ]
-"24 ../LCD/LCD.c
+"23 ../LCD/LCD.c
 [v _rowaddr `DCC[4]uc  1 e 4 0 ]
-"25
+"24
 [v _lcdrows `uc  1 e 1 0 ]
-"26
+"25
 [v _lcdcolumns `uc  1 e 1 0 ]
-"28
+"27
 [v _dispctrl `uc  1 e 1 0 ]
-"29
+"28
 [v _iomode `uc  1 e 1 0 ]
 "21 ../Tick/Tick-PIC16.c
 [v _tickcnt `VEul  1 s 4 tickcnt ]
@@ -436,21 +436,21 @@ E_RW_PIN 10
 [v _GIE `VEb  1 e 0 @95 ]
 "354 C:\Program Files (x86)\Microchip\xc8\v1.12\sources\doprnt.c
 [v _dpowers `DCC[5]ui  1 s 10 dpowers ]
-"30 main.c
+"24 main.c
 [v _buf `[20]uc  1 e 20 0 ]
-"40
+"34
 [v _main `(v  1 e 0 0 ]
 {
-"63
+"55
 } 0
-"32 ../LCD/LCD.c
+"31 ../LCD/LCD.c
 [v _lcd_init `(uc  1 e 1 0 ]
 {
 [v lcd_init@iodata `*v  1 a 1 wreg ]
 [v lcd_init@iodata `*v  1 a 1 wreg ]
 [v lcd_init@cols `uc  1 p 1 7 ]
 [v lcd_init@rows `uc  1 p 1 8 ]
-"75
+"74
 } 0
 "28 ../Tick/Tick-PIC16.c
 [v _tick_init `(v  1 e 0 0 ]
@@ -462,48 +462,48 @@ E_RW_PIN 10
 {
 "38
 } 0
-"90 ../LCD/LCD.c
+"89 ../LCD/LCD.c
 [v _lcd_on `(v  1 e 0 0 ]
 {
-"94
+"93
 } 0
-"96 main.c
+"88 main.c
 [v _led_task `(v  1 e 0 0 ]
 {
-"98
+"90
 [v led_task@ltime `ul  1 s 4 ltime ]
-"104
+"96
 } 0
-"69
+"61
 [v _dht11_task `(v  1 e 0 0 ]
 {
-"81
+"73
 [v dht11_task@eResult `E1128  1 a 1 0 ]
-"72
+"64
 [v dht11_task@hb `uc  1 a 1 2 ]
 [v dht11_task@tb `uc  1 a 1 1 ]
-"70
+"63
 [v dht11_task@ltick `ul  1 s 4 ltick ]
-"89
+"82
 } 0
-"177 ../LCD/LCD.c
+"176 ../LCD/LCD.c
 [v _lcd_puts `(v  1 e 0 0 ]
 {
 [v lcd_puts@string `*.mDCCuc  1 p 2 7 ]
-"180
+"179
 } 0
 "42 ../Tick/Tick-PIC16.c
 [v _tick_get `(ul  1 e 4 0 ]
 {
 "45
 } 0
-"148 ../LCD/LCD.c
+"147 ../LCD/LCD.c
 [v _lcd_goto `(v  1 e 0 0 ]
 {
 [v lcd_goto@col `uc  1 a 1 wreg ]
 [v lcd_goto@col `uc  1 a 1 wreg ]
 [v lcd_goto@row `uc  1 p 1 7 ]
-"156
+"155
 } 0
 "115 ../DHTLib.c
 [v _dhtlib_read11 `(E1128  1 e 1 0 ]
@@ -574,13 +574,13 @@ E_RW_PIN 10
 [v lcd_ioinit@iodata `*v  1 a 1 wreg ]
 "81
 } 0
-"159 ../LCD/LCD.c
+"158 ../LCD/LCD.c
 [v _lcd_send `(v  1 e 0 0 ]
 {
 [v lcd_send@data `uc  1 a 1 wreg ]
 [v lcd_send@data `uc  1 a 1 wreg ]
 [v lcd_send@rs `uc  1 p 1 4 ]
-"174
+"173
 } 0
 "127 ../LCD/LCD-PIC16.c
 [v _lcd_iowrite4 `(v  1 e 0 0 ]
@@ -646,10 +646,10 @@ E_RW_PIN 10
 [v ___lwmod@dividend `ui  1 p 2 9 ]
 "21
 } 0
-"110 main.c
+"102 main.c
 [v _isr `II(v  1 e 0 0 ]
 {
-"114
+"106
 } 0
 "48 ../Tick/Tick-PIC16.c
 [v _tick_update `(v  1 e 0 0 ]

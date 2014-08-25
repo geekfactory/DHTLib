@@ -7,6 +7,6 @@
 ../Delay/Delay.h  \
 ../DHTLibPort.h  \
 ../LCD/Delay/Delay.h  \
-../DHTLibConf.h  \
 ../DHTLib.h  \
+project_conf/Config.h  \
 ../LCD/Delay/DelayPort.h 

@@ -1355,7 +1355,7 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 13 "../DHTLibPort.h"
+# 10 "../DHTLibPort.h"
 typedef uint8_t PORTBASE;
 
 # 38 "../DHTLib.h"

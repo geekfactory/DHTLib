@@ -5,14 +5,14 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>../DHTLib.h</itemPath>
-      <itemPath>../DHTLibConf.h</itemPath>
       <itemPath>../DHTLibPort.h</itemPath>
-      <itemPath>../Delay/Delay.h</itemPath>
       <itemPath>../Delay/DelayPort.h</itemPath>
       <itemPath>../LCD/LCD-PIC16.h</itemPath>
       <itemPath>../LCD/LCD.h</itemPath>
       <itemPath>../Tick/Tick.h</itemPath>
       <itemPath>../Tick/TickPort.h</itemPath>
+      <itemPath>project_conf/Config.h</itemPath>
+      <itemPath>../Delay/Delay.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -69,9 +69,8 @@
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
       </makeCustomizationType>
       <HI-TECH-COMP>
-        <property key="asmlist" value="true"/>
         <property key="define-macros" value="PLIB_PIC16"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories" value="project_conf"/>
         <property key="identifier-length" value="255"/>
         <property key="operation-mode" value="free"/>
         <property key="opt-xc8-compiler-strict_ansi" value="false"/>
@@ -85,7 +84,6 @@
         <property key="preprocess-assembler" value="true"/>
         <property key="undefine-macros" value=""/>
         <property key="use-cci" value="false"/>
-        <property key="use-iar" value="false"/>
         <property key="verbose" value="false"/>
         <property key="warning-level" value="0"/>
         <property key="what-to-do" value="ignore"/>

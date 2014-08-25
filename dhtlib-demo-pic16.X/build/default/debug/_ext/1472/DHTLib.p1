@@ -954,7 +954,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;DHTLibPort.h: 13: typedef uint8_t PORTBASE;
+[; ;DHTLibPort.h: 10: typedef uint8_t PORTBASE;
 [; ;DHTLib.h: 38: enum dht_status {
 [; ;DHTLib.h: 39: E_DHTLIB_OK = 0,
 [; ;DHTLib.h: 40: E_DHTLIB_TIMEOUT_ERROR,

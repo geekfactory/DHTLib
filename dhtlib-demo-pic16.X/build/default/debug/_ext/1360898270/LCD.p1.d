@@ -3,4 +3,5 @@
  ../LCD/LCD.c  \
 ../LCD/LCD.h  \
 ../LCD/Delay/Delay.h  \
+project_conf/Config.h  \
 ../LCD/Delay/DelayPort.h 

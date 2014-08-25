@@ -1189,9 +1189,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LCD-PIC16.c: 134: lcd_ioset(E_EN_PIN,1);
 "134
 [e ( _lcd_ioset (2 , -> . `E1012 8 `E1012 -> -> 1 `i `uc ]
-[; ;LCD-PIC16.c: 135: _delay((unsigned long)((10)*(1000000/1000000.0)));
+[; ;LCD-PIC16.c: 135: _delay((unsigned long)((10)*(2000000/1000000.0)));
 "135
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 1000000 `l `d .1000000.0 `ul ]
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 2000000 `l `d .1000000.0 `ul ]
 [; ;LCD-PIC16.c: 136: lcd_ioset(E_EN_PIN,0);
 "136
 [e ( _lcd_ioset (2 , -> . `E1012 8 `E1012 -> -> 0 `i `uc ]

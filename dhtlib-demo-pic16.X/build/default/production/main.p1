@@ -18,9 +18,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_on `(v ~T0 @X0 0 ef ]
 "276
 [v _lcd_puts `(v ~T0 @X0 0 ef1`*Cuc ]
-"34 main.c
+"28 main.c
 [v _led_task `(v ~T0 @X0 0 ef ]
-"33
+"27
 [v _dht11_task `(v ~T0 @X0 0 ef ]
 "63 ../Tick/Tick.h
 [v _tick_get `(ul ~T0 @X0 0 ef ]
@@ -1054,7 +1054,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LCD.h: 327: void lcd_ioset(enum enLCDControlPins pin, uint8_t level);
 [; ;LCD.h: 344: void lcd_iowrite4(uint8_t data);
 [; ;LCD.h: 357: void lcd_iowrite8(uint8_t data);
-[; ;DHTLibPort.h: 13: typedef uint8_t PORTBASE;
+[; ;DHTLibPort.h: 10: typedef uint8_t PORTBASE;
 [; ;DHTLib.h: 38: enum dht_status {
 [; ;DHTLib.h: 39: E_DHTLIB_OK = 0,
 [; ;DHTLib.h: 40: E_DHTLIB_TIMEOUT_ERROR,
@@ -1064,192 +1064,192 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;DHTLib.h: 67: enum dht_status dhtlib_read11(uint8_t * temp, uint8_t * hum);
 [; ;DHTLib.h: 81: enum dht_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
 [; ;DHTLib.h: 95: enum dht_status dhtlib_float22(float * temp, float * hum);
-"14 main.c
+"9 main.c
 [p x FOSC=INTOSCIO ]
-"15
+"10
 [p x WDTE=OFF ]
-"16
+"11
 [p x PWRTE=OFF ]
-"17
+"12
 [p x MCLRE=ON ]
-"18
+"13
 [p x BOREN=OFF ]
-"19
+"14
 [p x LVP=OFF ]
-"20
+"15
 [p x CPD=OFF ]
-"21
+"16
 [p x WRT=OFF ]
-"22
+"17
 [p x CCPMX=RB0 ]
-"23
+"18
 [p x CP=OFF ]
-"26
+"20
 [p x FCMEN=OFF ]
-"27
+"21
 [p x IESO=OFF ]
-"30
+"24
 [v _buf `uc ~T0 @X0 -> 20 `i e ]
-[; ;main.c: 30: char buf[20];
-[; ;main.c: 33: void dht11_task();
-[; ;main.c: 34: void led_task();
-"40
+[; ;main.c: 24: char buf[20];
+[; ;main.c: 27: void dht11_task();
+[; ;main.c: 28: void led_task();
+"34
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 39: void main()
-[; ;main.c: 40: {
+[; ;main.c: 33: void main()
+[; ;main.c: 34: {
 [e :U _main ]
 [f ]
-[; ;main.c: 42: OSCCON = 0x7C;
-"42
+[; ;main.c: 36: OSCCON = 0x7C;
+"36
 [e = _OSCCON -> -> 124 `i `uc ]
-[; ;main.c: 43: ANSEL = 0x00;
-"43
+[; ;main.c: 37: ANSEL = 0x00;
+"37
 [e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 44: TRISA = 0xE0;
-"44
+[; ;main.c: 38: TRISA = 0xE0;
+"38
 [e = _TRISA -> -> 224 `i `uc ]
-[; ;main.c: 45: TRISB = 0xFF;
-"45
+[; ;main.c: 39: TRISB = 0xFF;
+"39
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;main.c: 48: lcd_init(0, 16, 2);
-"48
+[; ;main.c: 42: lcd_init(0, 16, 2);
+"42
 [e ( _lcd_init (3 , , -> -> 0 `i `*v -> -> 16 `i `uc -> -> 2 `i `uc ]
-[; ;main.c: 49: tick_init();
-"49
+[; ;main.c: 43: tick_init();
+"43
 [e ( _tick_init ..  ]
-[; ;main.c: 50: dhtlib_init();
-"50
+[; ;main.c: 44: dhtlib_init();
+"44
 [e ( _dhtlib_init ..  ]
-[; ;main.c: 53: lcd_on();
-"53
+[; ;main.c: 47: lcd_on();
+"47
 [e ( _lcd_on ..  ]
-[; ;main.c: 55: lcd_puts("  PRUEBA DHT11  ");
-"55
+[; ;main.c: 48: lcd_puts("  PRUEBA DHT11  ");
+"48
 [e ( _lcd_puts (1 :s 1C ]
-[; ;main.c: 59: for (;;) {
-"59
+[; ;main.c: 51: for (;;) {
+"51
 {
 [e :U 91 ]
 {
-[; ;main.c: 60: led_task();
-"60
+[; ;main.c: 52: led_task();
+"52
 [e ( _led_task ..  ]
-[; ;main.c: 61: dht11_task();
-"61
+[; ;main.c: 53: dht11_task();
+"53
 [e ( _dht11_task ..  ]
-"62
+"54
 }
-[; ;main.c: 62: }
+[; ;main.c: 54: }
 [e $U 91  ]
 [e :U 92 ]
 }
-[; ;main.c: 63: }
-"63
+[; ;main.c: 55: }
+"55
 [e :UE 90 ]
 }
-"69
+"61
 [v _dht11_task `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 68: void dht11_task()
-[; ;main.c: 69: {
+[; ;main.c: 60: void dht11_task()
+[; ;main.c: 61: {
 [e :U _dht11_task ]
 [f ]
-"70
+"63
 [v F1146 `ul ~T0 @X0 1 s ltick ]
 [i F1146
 -> -> -> 0 `i `l `ul
 ]
-"72
+"64
 [v _tb `uc ~T0 @X0 1 a ]
-[; ;main.c: 70: static unsigned long ltick = 0;
-[; ;main.c: 72: uint8_t tb = 0, hb = 0;
+[; ;main.c: 63: static uint32_t ltick = 0;
+[; ;main.c: 64: uint8_t tb = 0, hb = 0;
 [e = _tb -> -> 0 `i `uc ]
 [v _hb `uc ~T0 @X0 1 a ]
 [e = _hb -> -> 0 `i `uc ]
-[; ;main.c: 75: if (tick_get() - ltick >= ((unsigned long long)((2000000 + 128ull)/8ull)) * 5) {
-"75
+[; ;main.c: 67: if (tick_get() - ltick >= ((unsigned long long)((2000000 + 128ull)/8ull)) * 5) {
+"67
 [e $ ! >= - ( _tick_get ..  F1146 * / + -> -> 2000000 `l `ul -> 128 `ul -> 8 `ul -> -> -> 5 `i `l `ul 95  ]
 {
-[; ;main.c: 77: ltick = tick_get();
-"77
+[; ;main.c: 69: ltick = tick_get();
+"69
 [e = F1146 ( _tick_get ..  ]
-[; ;main.c: 79: lcd_goto(0, 1);
-"79
+[; ;main.c: 71: lcd_goto(0, 1);
+"71
 [e ( _lcd_goto (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"81
+"73
 [v _eResult `E1128 ~T0 @X0 1 a ]
-[; ;main.c: 81: enum dht_status eResult = dhtlib_read11(&tb, &hb);
+[; ;main.c: 73: enum dht_status eResult = dhtlib_read11(&tb, &hb);
 [e = _eResult ( _dhtlib_read11 (2 , &U _tb &U _hb ]
-[; ;main.c: 82: if (eResult == E_DHTLIB_OK)
-"82
+[; ;main.c: 75: if (eResult == E_DHTLIB_OK)
+"75
 [e $ ! == -> _eResult `i -> . `E1128 0 `i 96  ]
-[; ;main.c: 83: sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
-"83
+[; ;main.c: 76: sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
+"76
 [e ( _sprintf (1 , , (. , &U _buf :s 2C -> _tb `i -> _hb `i ]
 [e $U 97  ]
-"84
+"77
 [e :U 96 ]
-[; ;main.c: 84: else
-[; ;main.c: 85: sprintf(buf, "Sensor error: %02d    ", eResult);
-"85
+[; ;main.c: 77: else
+[; ;main.c: 78: sprintf(buf, "Sensor error: %02d    ", eResult);
+"78
 [e ( _sprintf (1 , (. , &U _buf :s 3C -> _eResult `i ]
 [e :U 97 ]
-[; ;main.c: 87: lcd_puts(buf);
-"87
+[; ;main.c: 80: lcd_puts(buf);
+"80
 [e ( _lcd_puts (1 -> &U _buf `*Cuc ]
-"88
+"81
 }
 [e :U 95 ]
-[; ;main.c: 88: }
-[; ;main.c: 89: }
-"89
+[; ;main.c: 81: }
+[; ;main.c: 82: }
+"82
 [e :UE 94 ]
 }
-"96
+"88
 [v _led_task `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 95: void led_task()
-[; ;main.c: 96: {
+[; ;main.c: 87: void led_task()
+[; ;main.c: 88: {
 [e :U _led_task ]
 [f ]
-"98
+"90
 [v F1151 `ul ~T0 @X0 1 s ltime ]
 [i F1151
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 98: static unsigned long ltime = 0;
-[; ;main.c: 100: if (tick_get() - ltime >= ((unsigned long long)((2000000 + 128ull)/8ull)) / 2) {
-"100
+[; ;main.c: 90: static uint32_t ltime = 0;
+[; ;main.c: 92: if (tick_get() - ltime >= ((unsigned long long)((2000000 + 128ull)/8ull)) / 2) {
+"92
 [e $ ! >= - ( _tick_get ..  F1151 / / + -> -> 2000000 `l `ul -> 128 `ul -> 8 `ul -> -> -> 2 `i `l `ul 99  ]
 {
-[; ;main.c: 101: ltime = tick_get();
-"101
+[; ;main.c: 93: ltime = tick_get();
+"93
 [e = F1151 ( _tick_get ..  ]
-[; ;main.c: 102: PORTA ^= 0x10;
-"102
+[; ;main.c: 94: PORTA ^= 0x10;
+"94
 [e =^ _PORTA -> -> 16 `i `uc ]
-"103
+"95
 }
 [e :U 99 ]
-[; ;main.c: 103: }
-[; ;main.c: 104: }
-"104
+[; ;main.c: 95: }
+[; ;main.c: 96: }
+"96
 [e :UE 98 ]
 }
-"110
+"102
 [v F1155 `(v ~T0 @X0 1 tf ]
 [v _isr `IF1155 ~T0 @X0 1 e ]
 {
-[; ;main.c: 109: void interrupt isr(void)
-[; ;main.c: 110: {
+[; ;main.c: 101: void interrupt isr(void)
+[; ;main.c: 102: {
 [e :U _isr ]
 [f ]
-[; ;main.c: 112: tick_update();
-"112
+[; ;main.c: 104: tick_update();
+"104
 [e ( _tick_update ..  ]
-[; ;main.c: 114: }
-"114
+[; ;main.c: 106: }
+"106
 [e :UE 100 ]
 }
 [p f _sprintf 9470084 ]

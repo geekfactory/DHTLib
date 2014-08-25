@@ -1526,7 +1526,7 @@ void lcd_iowrite4(uint8_t data);
 # 357
 void lcd_iowrite8(uint8_t data);
 
-# 13 "../DHTLibPort.h"
+# 10 "../DHTLibPort.h"
 typedef uint8_t PORTBASE;
 
 # 38 "../DHTLib.h"
@@ -1549,7 +1549,7 @@ enum dht_status dhtlib_read22(uint16_t * temp, uint16_t * hum);
 enum dht_status dhtlib_float22(float * temp, float * hum);
 
 
-# 14 "main.c"
+# 9 "main.c"
 #pragma config FOSC = INTOSCIO
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -1561,7 +1561,6 @@ enum dht_status dhtlib_float22(float * temp, float * hum);
 #pragma config CCPMX = RB0
 #pragma config CP = OFF
 
-
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
@@ -1572,7 +1571,7 @@ char buf[20];
 void dht11_task();
 void led_task();
 
-# 39
+# 33
 void main()
 {
 
@@ -1588,9 +1587,7 @@ dhtlib_init();
 
 
 lcd_on();
-
 lcd_puts("  PRUEBA DHT11  ");
-
 
 
 for (;;) {
@@ -1599,11 +1596,11 @@ dht11_task();
 }
 }
 
-# 68
+# 60
 void dht11_task()
 {
-static unsigned long ltick = 0;
 
+static uint32_t ltick = 0;
 uint8_t tb = 0, hb = 0;
 
 
@@ -1614,6 +1611,7 @@ ltick = tick_get();
 lcd_goto(0, 1);
 
 enum dht_status eResult = dhtlib_read11(&tb, &hb);
+
 if (eResult == E_DHTLIB_OK)
 sprintf(buf, "T: %02d C H: %02d%%  ", tb, hb);
 else
@@ -1623,11 +1621,11 @@ lcd_puts(buf);
 }
 }
 
-# 95
+# 87
 void led_task()
 {
 
-static unsigned long ltime = 0;
+static uint32_t ltime = 0;
 
 if (tick_get() - ltime >= ((unsigned long long)((2000000 + 128ull)/8ull)) / 2) {
 ltime = tick_get();
@@ -1635,7 +1633,7 @@ PORTA ^= 0x10;
 }
 }
 
-# 109
+# 101
 void interrupt isr(void)
 {
 
