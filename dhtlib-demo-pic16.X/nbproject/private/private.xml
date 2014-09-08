@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/main.c</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/Delay/Delay.h</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/Delay/DelayPort.h</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/DHTLib.h</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/DHTLibPort.h</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/Tick/Tick-PIC16.c</file>
+        <file>file:/C:/Users/Ruben/Dropbox/Electronics/MCULib/DHTLib/dhtlib-demo-pic16.X/project_conf/Config.h</file>
+    </open-files>
 </project-private>
